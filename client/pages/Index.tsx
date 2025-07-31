@@ -292,8 +292,20 @@ export default function Index() {
               <div className="space-y-2">
                 <div className="text-green-600 font-semibold">🆓 7 дней бесплатно!</div>
                 <div className="text-sm text-gray-600">Для новых польз��вателей</div>
-                <Button size="sm" className="bg-green-500 hover:bg-green-600 text-white">
-                  Активировать пробный период
+                <Button
+                  size="sm"
+                  className="bg-green-500 hover:bg-green-600 text-white"
+                  onClick={handleActivateFreeTrial}
+                  disabled={actionLoading}
+                >
+                  {actionLoading ? (
+                    <>
+                      <Loader2 className="w-3 h-3 mr-1 animate-spin" />
+                      Активируем...
+                    </>
+                  ) : (
+                    'Активировать пробный период'
+                  )}
                 </Button>
               </div>
             </CardContent>
