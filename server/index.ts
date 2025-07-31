@@ -29,5 +29,15 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
+  // VPN API routes
+  app.get("/api/vpn/user/:telegramId", getUserInfo);
+  app.get("/api/vpn/config/:telegramId", getVpnConfig);
+  app.get("/api/vpn/plans", getSubscriptionPlans);
+  app.get("/api/vpn/stats", getServiceStats);
+  app.post("/api/vpn/trial", activateFreeTrial);
+  app.post("/api/vpn/extend", extendSubscription);
+  app.post("/api/vpn/auto-renewal", toggleAutoRenewal);
+  app.get("/api/vpn/refresh/:telegramId", refreshSubscriptionStatus);
+
   return app;
 }
