@@ -12,11 +12,15 @@ import {
   CheckCircle,
   Smartphone,
   Laptop,
-  Wifi
+  Wifi,
+  HelpCircle,
+  AlertTriangle,
+  Zap,
+  Shield
 } from "lucide-react";
 
 export default function Instructions() {
-  const [activeStep, setActiveStep] = useState(0);
+  const [selectedFaq, setSelectedFaq] = useState<number | null>(null);
 
   const platforms = [
     {
@@ -46,7 +50,7 @@ export default function Instructions() {
         { name: "Streisand", recommended: false, link: "https://apps.apple.com/app/streisand/id6450534064" }
       ],
       steps: [
-        "Установите FoXray из App Store",
+        "Установ��те FoXray из App Store",
         "Откройте приложение и нажмите '+' или 'Add'",
         "Выберите 'Import from Clipboard' или 'Импорт из буфера'",
         "Скопируйте VPN-ссылку из бота",
@@ -108,19 +112,103 @@ export default function Instructions() {
 
   const troubleshooting = [
     {
-      problem: "Не удается подключиться",
-      solution: "Проверьте, ак��ивна ли подписка. Попробуйте переподключиться к интернету.",
-      icon: "🔧"
+      id: "connection",
+      problem: "Не удается подключиться к VPN",
+      severity: "high",
+      icon: "🔴",
+      symptoms: [
+        "VPN показывает ошибку при подключении",
+        "Бесконечная загрузка при попытке соединения",
+        "Приложение зависает на этапе подключения"
+      ],
+      solutions: [
+        {
+          step: "Проверьте статус подписки",
+          description: "Убедитесь, что ваша подписка активна в разделе 'Подписка'",
+          action: "checkSubscription"
+        },
+        {
+          step: "Обновите VPN-ссылку",
+          description: "Получите новую конфигурацию в разделе 'VPN'",
+          action: "refreshConfig"
+        },
+        {
+          step: "Проверьте интернет-соединение",
+          description: "Убедитесь, что интернет работает без VPN",
+          action: null
+        },
+        {
+          step: "Перезапустите приложение",
+          description: "Полностью закройте и откройте VPN-приложение заново",
+          action: null
+        }
+      ]
     },
     {
-      problem: "Низкая скорость",
-      solution: "Попробуйте переключиться на другой сервер или проверьте загрузку сети.",
-      icon: "⚡"
+      id: "speed",
+      problem: "Низкая скорость соединения",
+      severity: "medium",
+      icon: "🟡",
+      symptoms: [
+        "Медленная загрузка сайтов",
+        "Видео буферизуется или не загружается",
+        "Высокий пинг в играх или видеозвонках"
+      ],
+      solutions: [
+        {
+          step: "Проверьте скорость без VPN",
+          description: "Отключите VPN и измерьте скорость интернета",
+          action: null
+        },
+        {
+          step: "Попробуйте другой сервер",
+          description: "Наши серверы в Нидерландах обычно самые быстрые",
+          action: null
+        },
+        {
+          step: "Измените протокол подключения",
+          description: "В настройках приложения попробуйте другой п��отокол",
+          action: null
+        },
+        {
+          step: "Проверьте загрузку сети",
+          description: "Возможно, ваш провайдер ограничивает скорость",
+          action: null
+        }
+      ]
     },
     {
-      problem: "Приложение не запускается",
-      solution: "Перезагрузите устройство и попробуйте снова. Проверьте версию приложения.",
-      icon: "🔄"
+      id: "blocked",
+      problem: "VPN заблокирован провайдером",
+      severity: "high",
+      icon: "🚫",
+      symptoms: [
+        "VPN подключается, но сайты не открываются",
+        "Только некоторые сайты работают через VPN",
+        "Периодические отключения VPN"
+      ],
+      solutions: [
+        {
+          step: "Попробуйте другой порт",
+          description: "Используйте альтернативные порты (80, 8080, 2087)",
+          action: null
+        },
+        {
+          step: "Смените протокол",
+          description: "Попробуйте VLESS через WebSocket или другие протоколы",
+          action: null
+        },
+        {
+          step: "Используйте обфускацию",
+          description: "Включите маскировку трафика в настройках приложения",
+          action: null
+        },
+        {
+          step: "Обратитесь в поддержку",
+          description: "Мы предоставим специальную конфигурацию для вашего региона",
+          action: "contactSupport"
+        }
+      ]
     }
   ];
 
@@ -196,7 +284,7 @@ export default function Instructions() {
                 <CardHeader>
                   <CardTitle className="text-lg text-gray-900 flex items-center">
                     <span className="text-2xl mr-3">{platform.icon}</span>
-                    Инструкция для {platform.name}
+                    Инструкция ��ля {platform.name}
                   </CardTitle>
                   <CardDescription>
                     Пошаговая настройка VPN на {platform.name}
@@ -346,24 +434,127 @@ export default function Instructions() {
           </TabsContent>
         </Tabs>
 
-        {/* Troubleshooting */}
+        {/* Advanced Troubleshooting */}
         <Card className="border-gray-100">
           <CardHeader>
-            <CardTitle className="text-lg text-gray-900">🔧 Реш��ние проблем</CardTitle>
+            <CardTitle className="text-lg text-gray-900">🔧 Диагностика и решение проблем</CardTitle>
             <CardDescription>
-              Частые вопросы и их решения
+              Пошаговые инструкции для решения типичных проблем
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-3">
-            {troubleshooting.map((item, index) => (
-              <div key={index} className="p-3 bg-gray-50 rounded-lg">
-                <div className="flex items-start space-x-3">
-                  <span className="text-lg">{item.icon}</span>
-                  <div>
-                    <div className="font-medium text-gray-900">{item.problem}</div>
-                    <div className="text-sm text-gray-600 mt-1">{item.solution}</div>
+          <CardContent className="space-y-4">
+            {troubleshooting.map((issue, index) => (
+              <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                <button
+                  className="w-full p-4 text-left hover:bg-gray-50 transition-colors"
+                  onClick={() => setSelectedFaq(selectedFaq === index ? null : index)}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <span className="text-xl">{issue.icon}</span>
+                      <div>
+                        <h3 className="font-medium text-gray-900">{issue.problem}</h3>
+                        <div className="flex items-center space-x-2 mt-1">
+                          <Badge 
+                            className={`text-xs ${
+                              issue.severity === 'high' 
+                                ? 'bg-red-500/10 text-red-600 border-red-500/20' 
+                                : 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20'
+                            }`}
+                          >
+                            {issue.severity === 'high' ? 'Критично' : 'Средне'}
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
+                    <HelpCircle className={`w-4 h-4 text-gray-400 transition-transform ${
+                      selectedFaq === index ? 'rotate-180' : ''
+                    }`} />
                   </div>
-                </div>
+                </button>
+                
+                {selectedFaq === index && (
+                  <div className="px-4 pb-4 border-t border-gray-100">
+                    {/* Symptoms */}
+                    <div className="mt-4">
+                      <h4 className="font-medium text-gray-900 mb-2 flex items-center">
+                        <AlertTriangle className="w-4 h-4 mr-2 text-red-500" />
+                        Симптомы:
+                      </h4>
+                      <ul className="space-y-1">
+                        {issue.symptoms.map((symptom, sIndex) => (
+                          <li key={sIndex} className="text-sm text-gray-600 flex items-start">
+                            <span className="text-red-400 mr-2">•</span>
+                            {symptom}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Solutions */}
+                    <div className="mt-4">
+                      <h4 className="font-medium text-gray-900 mb-3 flex items-center">
+                        <Zap className="w-4 h-4 mr-2 text-green-500" />
+                        Пошаговое решение:
+                      </h4>
+                      <div className="space-y-3">
+                        {issue.solutions.map((solution, sIndex) => (
+                          <div key={sIndex} className="bg-gray-50 p-3 rounded-lg">
+                            <div className="flex items-start space-x-3">
+                              <div className="w-6 h-6 bg-telegram-blue rounded-full flex items-center justify-center text-white text-xs font-medium flex-shrink-0">
+                                {sIndex + 1}
+                              </div>
+                              <div className="flex-1">
+                                <div className="font-medium text-gray-900">{solution.step}</div>
+                                <div className="text-sm text-gray-600 mt-1">{solution.description}</div>
+                                {solution.action && (
+                                  <div className="mt-2">
+                                    {solution.action === 'checkSubscription' && (
+                                      <Link to="/subscription">
+                                        <Button size="sm" variant="outline" className="text-xs">
+                                          Проверить подписку
+                                        </Button>
+                                      </Link>
+                                    )}
+                                    {solution.action === 'refreshConfig' && (
+                                      <Link to="/config">
+                                        <Button size="sm" variant="outline" className="text-xs">
+                                          Обновить конфигурацию
+                                        </Button>
+                                      </Link>
+                                    )}
+                                    {solution.action === 'contactSupport' && (
+                                      <Link to="/support">
+                                        <Button size="sm" className="text-xs bg-telegram-blue hover:bg-telegram-blue-dark">
+                                          Связаться с поддержкой
+                                        </Button>
+                                      </Link>
+                                    )}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Quick test */}
+                    <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+                      <div className="flex items-start space-x-2">
+                        <Shield className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                        <div className="text-sm">
+                          <div className="font-medium text-blue-700">Быстрая проверка</div>
+                          <div className="text-blue-600 mt-1">
+                            {issue.id === 'connection' && 'Попробуйте переподключиться к VPN после выполнения шагов'}
+                            {issue.id === 'speed' && 'Проведите тест скорости на speedtest.net с включенным VPN'}
+                            {issue.id === 'blocked' && 'Проверьте доступность заблокированных сайтов после изменений'}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </CardContent>
