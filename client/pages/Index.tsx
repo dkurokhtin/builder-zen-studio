@@ -52,7 +52,7 @@ export default function Index() {
     {
       icon: Lock,
       title: "Простая настройка",
-      description: "Настройка за пару кликов на любом устройстве",
+      description: "Настройка за пару клик��в на любом устройстве",
       color: "bg-orange-500"
     }
   ];
@@ -88,10 +88,34 @@ export default function Index() {
     }
   ];
 
-  const copyVpnLink = () => {
-    navigator.clipboard.writeText(userVpnStatus.vpnLink);
-    // В реальности добавим toast уведомление
+  const handleActivateFreeTrial = async () => {
+    try {
+      await activateFreeTrial();
+      refreshUser(); // Обновляем данные пользователя после активации
+    } catch (error) {
+      console.error('Ошибка активации пробного периода:', error);
+    }
   };
+
+  const handleCopyVpnLink = async () => {
+    if (user?.vpnLink) {
+      await copyToClipboard(user.vpnLink);
+    }
+  };
+
+  // Если данные загружаются
+  if (userLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
+        <div className="flex items-center justify-center h-screen">
+          <div className="text-center">
+            <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-telegram-blue" />
+            <p className="text-gray-600">Загрузка данных...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
