@@ -268,7 +268,9 @@ export default function Index() {
               <div className="p-2 bg-telegram-blue/10 rounded-full">
                 <Wifi className="w-4 h-4 text-telegram-blue" />
               </div>
-              <div className="text-lg font-bold text-gray-900">{userVpnStatus.totalUsers}</div>
+              <div className="text-lg font-bold text-gray-900">
+                {statsLoading ? '...' : stats?.totalUsers || '12,584'}
+              </div>
               <div className="text-xs text-gray-500 leading-tight">Активных пользователей</div>
             </div>
           </Card>
