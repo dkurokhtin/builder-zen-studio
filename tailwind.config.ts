@@ -27,6 +27,16 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        telegram: {
+          blue: "hsl(var(--telegram-blue))",
+          "blue-light": "hsl(var(--telegram-blue-light))",
+          "blue-dark": "hsl(var(--telegram-blue-dark))",
+          gray: "hsl(var(--telegram-gray))",
+          "gray-light": "hsl(var(--telegram-gray-light))",
+          "gray-dark": "hsl(var(--telegram-gray-dark))",
+          green: "hsl(var(--telegram-green))",
+          red: "hsl(var(--telegram-red))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
