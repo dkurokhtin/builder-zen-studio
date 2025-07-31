@@ -2,6 +2,16 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+import {
+  getUserInfo,
+  getVpnConfig,
+  getSubscriptionPlans,
+  activateFreeTrial,
+  extendSubscription,
+  toggleAutoRenewal,
+  refreshSubscriptionStatus,
+  getServiceStats
+} from "./routes/vpn";
 
 export function createServer() {
   const app = express();
