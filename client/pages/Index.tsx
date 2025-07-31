@@ -4,36 +4,31 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { 
-  Shield, 
-  Wifi, 
-  Clock, 
-  QrCode, 
-  Smartphone, 
-  Laptop, 
-  Globe, 
+import { useVpnUser, useServiceStats, useSubscriptionActions, useClipboard } from "@/hooks/useVpn";
+import {
+  Shield,
+  Wifi,
+  Clock,
+  QrCode,
+  Smartphone,
+  Laptop,
+  Globe,
   Zap,
   Lock,
   Settings,
   MessageCircle,
   CheckCircle,
   AlertCircle,
-  Copy
+  Copy,
+  Loader2
 } from "lucide-react";
 
 export default function Index() {
   const [activeTab, setActiveTab] = useState("home");
-  
-  // Мок данные пользователя VPN (в реальности получаем с API)
-  const userVpnStatus = {
-    isActive: true,
-    daysLeft: 7,
-    subscriptionEnd: "2024-01-15",
-    hasFreeTrial: false,
-    vpnLink: "vless://b6695ada-1234-5678-9abc-def012345678@your.vpn.host:443...",
-    totalUsers: "12,584",
-    messagesCount: "45,231"
-  };
+  const { user, loading: userLoading, refreshUser } = useVpnUser();
+  const { stats, loading: statsLoading } = useServiceStats();
+  const { activateFreeTrial, loading: actionLoading } = useSubscriptionActions();
+  const { copied, copyToClipboard } = useClipboard();
 
   const vpnFeatures = [
     {
