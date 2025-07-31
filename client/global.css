@@ -54,6 +54,16 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Telegram color scheme */
+    --telegram-blue: 213 92% 56%;
+    --telegram-blue-light: 213 92% 66%;
+    --telegram-blue-dark: 213 92% 46%;
+    --telegram-gray: 215 28% 17%;
+    --telegram-gray-light: 215 28% 27%;
+    --telegram-gray-dark: 215 28% 7%;
+    --telegram-green: 120 100% 40%;
+    --telegram-red: 0 100% 60%;
   }
 
   .dark {
