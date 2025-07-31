@@ -11,6 +11,7 @@ import Index from "./pages/Index";
 import Config from "./pages/Config";
 import Instructions from "./pages/Instructions";
 import Subscription from "./pages/Subscription";
+import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
