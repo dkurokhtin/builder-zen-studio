@@ -52,7 +52,7 @@ export default function Index() {
     {
       icon: Lock,
       title: "Простая настройка",
-      description: "Настройка за пару клик��в на любом устройстве",
+      description: "Настройка за пару кликов на любом устройстве",
       color: "bg-orange-500"
     }
   ];
@@ -132,12 +132,12 @@ export default function Index() {
                 <p className="text-xs text-gray-500">@dkvpn1_bot</p>
               </div>
             </div>
-            <Badge 
-              variant="secondary" 
-              className={`${userVpnStatus.isActive ? 'bg-green-500/10 text-green-600 border-green-500/20' : 'bg-red-500/10 text-red-600 border-red-500/20'}`}
+            <Badge
+              variant="secondary"
+              className={`${user?.subscriptionActive ? 'bg-green-500/10 text-green-600 border-green-500/20' : 'bg-red-500/10 text-red-600 border-red-500/20'}`}
             >
-              {userVpnStatus.isActive ? <CheckCircle className="w-3 h-3 mr-1" /> : <AlertCircle className="w-3 h-3 mr-1" />}
-              {userVpnStatus.isActive ? 'Активна' : 'Истекла'}
+              {user?.subscriptionActive ? <CheckCircle className="w-3 h-3 mr-1" /> : <AlertCircle className="w-3 h-3 mr-1" />}
+              {user?.subscriptionActive ? 'Активна' : 'Истекла'}
             </Badge>
           </div>
         </div>
@@ -159,7 +159,7 @@ export default function Index() {
                 <CardDescription className="text-white/80">
                   {userVpnStatus.isActive 
                     ? `🟢 Ваша подписка активна ещё ${userVpnStatus.daysLeft} дней`
-                    : "🔴 Подписка истекла - продлите для продолжения"
+                    : "🔴 Подписка истекла - продлите для ��родолжения"
                   }
                 </CardDescription>
               </div>
