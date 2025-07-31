@@ -169,30 +169,30 @@ export default function Index() {
           </CardHeader>
           <CardContent className="pt-0">
             <div className="space-y-3">
-              {userVpnStatus.isActive && (
+              {user?.subscriptionActive && user?.vpnLink && (
                 <div className="bg-white/10 rounded-lg p-3">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-white/80">🔗 VPN-ссылка:</span>
-                    <Button 
-                      size="sm" 
-                      variant="ghost" 
+                    <Button
+                      size="sm"
+                      variant="ghost"
                       className="text-white hover:bg-white/20 h-6 px-2"
-                      onClick={copyVpnLink}
+                      onClick={handleCopyVpnLink}
                     >
-                      <Copy className="w-3 h-3" />
+                      {copied ? <CheckCircle className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
                     </Button>
                   </div>
                   <div className="text-xs text-white/70 font-mono break-all bg-black/20 rounded p-2">
-                    {userVpnStatus.vpnLink.substring(0, 50)}...
+                    {user.vpnLink.substring(0, 50)}...
                   </div>
                 </div>
               )}
               <Link to="/config">
-                <Button 
+                <Button
                   className="w-full bg-white text-telegram-blue hover:bg-white/90 font-medium"
                   size="lg"
                 >
-                  {userVpnStatus.isActive ? "🔗 Получить VPN-ссылку" : "🚀 Получить доступ"}
+                  {user?.subscriptionActive ? "🔗 Получить VPN-ссылку" : "🚀 Получить доступ"}
                 </Button>
               </Link>
             </div>
@@ -289,7 +289,7 @@ export default function Index() {
             <CardContent className="p-4 text-center">
               <div className="space-y-2">
                 <div className="text-green-600 font-semibold">🆓 7 дней бесплатно!</div>
-                <div className="text-sm text-gray-600">Для новых пользователей</div>
+                <div className="text-sm text-gray-600">Для новых польз��вателей</div>
                 <Button size="sm" className="bg-green-500 hover:bg-green-600 text-white">
                   Активировать пробный период
                 </Button>
