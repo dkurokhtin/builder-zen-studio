@@ -155,11 +155,13 @@ export default function Index() {
                 <AvatarFallback className="bg-white/20 text-white">DK</AvatarFallback>
               </Avatar>
               <div>
-                <CardTitle className="text-white">👋 Добро пожаловать, Дмитрий!</CardTitle>
+                <CardTitle className="text-white">
+                  👋 Добро пожаловать{user?.firstName ? `, ${user.firstName}` : ''}!
+                </CardTitle>
                 <CardDescription className="text-white/80">
-                  {userVpnStatus.isActive 
-                    ? `🟢 Ваша подписка активна ещё ${userVpnStatus.daysLeft} дней`
-                    : "🔴 Подписка истекла - продлите для ��родолжения"
+                  {user?.subscriptionActive
+                    ? `🟢 Ваша подписка активна ещё ${user.daysLeft} дней`
+                    : "🔴 Подписка истекла - продлите для продолжения"
                   }
                 </CardDescription>
               </div>
