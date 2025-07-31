@@ -286,7 +286,7 @@ export default function Index() {
         </div>
 
         {/* Free Trial Banner */}
-        {!userVpnStatus.hasFreeTrial && (
+        {user?.planType !== 'free_trial' && !user?.subscriptionActive && (
           <Card className="bg-gradient-to-r from-green-500/10 to-telegram-blue/10 border-green-500/20">
             <CardContent className="p-4 text-center">
               <div className="space-y-2">
