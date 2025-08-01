@@ -66,7 +66,7 @@ export default function Support() {
     },
     {
       question: "VPN не подключается, что делать?",
-      answer: "1) Проверьте активность подписки 2) Убедитесь в правильности скопированной ссылки 3) Перезапустите приложение 4) Проверьте интернет-соединение 5) Обратитесь в поддержку."
+      answer: "1) Проверьте активность подписки 2) Убедитесь в правильности скопированной ссылки 3) Перезапустите приложение 4) Проверь��е интернет-соединение 5) Обратитесь в поддержку."
     },
     {
       question: "Можно ли использовать на нескольких устройствах?",
@@ -82,7 +82,7 @@ export default function Support() {
     },
     {
       question: "В каких странах есть серверы?",
-      answer: "У нас есть серверы в 15+ странах: Нидерланды, Германия, США, Канада, Япония, Сингапур, Великобритания, Франция и другие. Мы регулярно добавляем новые локации."
+      answer: "У нас ес��ь серверы в 15+ странах: Нидерланды, Германия, США, Канада, Япония, Сингапур, Великобритания, Франция и другие. Мы регулярно добавляем новые локации."
     }
   ];
 
@@ -174,13 +174,13 @@ export default function Support() {
 
         {/* Quick Actions */}
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-gray-900">🚀 Быстрые действия</h2>
+          <h2 className="text-lg font-semibold text-foreground">🚀 Быстрые действия</h2>
           {quickActions.map((action, index) => (
             <Card key={index} className="border-gray-100 hover:shadow-md transition-shadow cursor-pointer">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
-                    <h3 className="font-medium text-gray-900">{action.title}</h3>
+                    <h3 className="font-medium text-foreground">{action.title}</h3>
                     <p className="text-sm text-gray-500 mt-1">{action.description}</p>
                   </div>
                   <Link to={action.route}>
@@ -196,7 +196,7 @@ export default function Support() {
 
         {/* Contact Methods */}
         <div className="space-y-3" id="contact">
-          <h2 className="text-lg font-semibold text-gray-900">💬 Способы связи</h2>
+          <h2 className="text-lg font-semibold text-foreground">💬 Способы связи</h2>
           {supportChannels.map((channel, index) => (
             <Card key={index} className="border-gray-100">
               <CardContent className="p-4">
@@ -206,7 +206,7 @@ export default function Support() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center space-x-2">
-                      <h3 className="font-medium text-gray-900">{channel.title}</h3>
+                      <h3 className="font-medium text-foreground">{channel.title}</h3>
                       {channel.available ? (
                         <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
                           Доступно
@@ -241,7 +241,7 @@ export default function Support() {
 
         {/* FAQ Section */}
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-gray-900">❓ Частые вопросы</h2>
+          <h2 className="text-lg font-semibold text-foreground">❓ Частые вопросы</h2>
           <div className="space-y-2">
             {faqItems.map((item, index) => (
               <Card key={index} className="border-gray-100">
@@ -251,7 +251,7 @@ export default function Support() {
                     onClick={() => setSelectedFaq(selectedFaq === index ? null : index)}
                   >
                     <div className="flex items-center justify-between">
-                      <h3 className="font-medium text-gray-900 pr-4">{item.question}</h3>
+                      <h3 className="font-medium text-foreground pr-4">{item.question}</h3>
                       <HelpCircle className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform ${
                         selectedFaq === index ? 'rotate-180' : ''
                       }`} />
@@ -278,7 +278,7 @@ export default function Support() {
               <div>
                 <div className="font-medium text-orange-700">Срочная проблема?</div>
                 <div className="text-sm text-orange-600 mt-1">
-                  Если у вас критическая проблема с доступом, напишите нам в Telegram чат с пометкой "СРОЧНО" - мы ответим в течение 2 минут.
+                  Если у вас критическая проблема с доступом, напишите нам в Telegram чат с пометкой "СРОЧНО" - мы ответим �� течение 2 минут.
                 </div>
                 <Button size="sm" className="mt-3 bg-orange-500 hover:bg-orange-600 text-white" asChild>
                   <a href="https://t.me/dkvpn_support" target="_blank" rel="noopener noreferrer">
@@ -294,7 +294,7 @@ export default function Support() {
         {/* Links */}
         <Card className="border-gray-100">
           <CardHeader>
-            <CardTitle className="text-lg text-gray-900">📚 Полезные ссылки</CardTitle>
+            <CardTitle className="text-lg text-foreground">📚 Полезные ссылки</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
             <Button variant="outline" className="w-full justify-start" asChild>
