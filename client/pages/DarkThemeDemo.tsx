@@ -1,24 +1,30 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { useTheme } from "next-themes";
-import { 
-  Shield, 
-  Wifi, 
-  Clock, 
-  QrCode, 
-  Smartphone, 
-  Globe, 
+import {
+  Shield,
+  Wifi,
+  Clock,
+  QrCode,
+  Smartphone,
+  Globe,
   Zap,
   Lock,
   MessageCircle,
   CheckCircle,
   Copy,
-  Moon
+  Moon,
 } from "lucide-react";
 
 export default function DarkThemeDemo() {
@@ -34,26 +40,26 @@ export default function DarkThemeDemo() {
       icon: Shield,
       title: "Защита данных",
       description: "Без логов — ваша приватность под защитой",
-      color: "bg-green-500"
+      color: "bg-green-500",
     },
     {
       icon: Zap,
       title: "Высокая скорость",
       description: "До 1000 Мбит/с, безлимитный трафик",
-      color: "bg-telegram-blue"
+      color: "bg-telegram-blue",
     },
     {
       icon: Globe,
       title: "Доступ ко всем сайтам",
       description: "YouTube без рекламы, обход блокировок",
-      color: "bg-purple-500"
+      color: "bg-purple-500",
     },
     {
       icon: Lock,
       title: "Простая настройка",
       description: "Настройка за пару кликов на любом устройстве",
-      color: "bg-orange-500"
-    }
+      color: "bg-orange-500",
+    },
   ];
 
   const quickActions = [
@@ -62,29 +68,29 @@ export default function DarkThemeDemo() {
       title: "Получить VPN",
       description: "Ссылка и QR-код",
       route: "/config",
-      color: "bg-telegram-blue"
+      color: "bg-telegram-blue",
     },
     {
       icon: Smartphone,
       title: "Инструкция",
       description: "Настройка устройств",
-      route: "/instructions", 
-      color: "bg-green-500"
+      route: "/instructions",
+      color: "bg-green-500",
     },
     {
       icon: Clock,
       title: "Подписка",
       description: "Управление и продление",
       route: "/subscription",
-      color: "bg-purple-500"
+      color: "bg-purple-500",
     },
     {
       icon: MessageCircle,
       title: "Поддержка",
       description: "Живая помощь 24/7",
       route: "/support",
-      color: "bg-orange-500"
-    }
+      color: "bg-orange-500",
+    },
   ];
 
   return (
@@ -119,14 +125,15 @@ export default function DarkThemeDemo() {
 
       {/* Main Content */}
       <div className="max-w-md mx-auto px-4 py-6 space-y-6">
-        
         {/* Welcome Card */}
         <Card className="bg-gradient-to-r from-telegram-blue to-green-500 text-white border-0 shadow-lg">
           <CardHeader className="pb-4">
             <div className="flex items-center space-x-3">
               <Avatar className="h-12 w-12 border-2 border-white/20">
                 <AvatarImage src="/placeholder.svg" />
-                <AvatarFallback className="bg-white/20 text-white">DK</AvatarFallback>
+                <AvatarFallback className="bg-white/20 text-white">
+                  DK
+                </AvatarFallback>
               </Avatar>
               <div>
                 <CardTitle className="text-white">
@@ -143,9 +150,9 @@ export default function DarkThemeDemo() {
               <div className="bg-white/10 rounded-lg p-3">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-white/80">🔗 VPN-ссылка:</span>
-                  <Button 
-                    size="sm" 
-                    variant="ghost" 
+                  <Button
+                    size="sm"
+                    variant="ghost"
                     className="text-white hover:bg-white/20 h-6 px-2"
                   >
                     <Copy className="w-3 h-3" />
@@ -156,7 +163,7 @@ export default function DarkThemeDemo() {
                 </div>
               </div>
               <Link to="/config">
-                <Button 
+                <Button
                   className="w-full bg-white text-telegram-blue hover:bg-white/90 font-medium"
                   size="lg"
                 >
@@ -176,8 +183,12 @@ export default function DarkThemeDemo() {
                   <div className={`p-3 rounded-xl ${action.color}`}>
                     <action.icon className="w-5 h-5 text-white" />
                   </div>
-                  <div className="text-sm font-medium text-foreground">{action.title}</div>
-                  <div className="text-xs text-muted-foreground leading-tight">{action.description}</div>
+                  <div className="text-sm font-medium text-foreground">
+                    {action.title}
+                  </div>
+                  <div className="text-xs text-muted-foreground leading-tight">
+                    {action.description}
+                  </div>
                 </div>
               </Card>
             </Link>
@@ -186,17 +197,26 @@ export default function DarkThemeDemo() {
 
         {/* VPN Features */}
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-foreground mb-4">🚀 Преимущества VPN</h2>
+          <h2 className="text-lg font-semibold text-foreground mb-4">
+            🚀 Преимущества VPN
+          </h2>
           {vpnFeatures.map((feature, index) => (
-            <Card key={index} className="border-border hover:bg-accent/50 transition-colors">
+            <Card
+              key={index}
+              className="border-border hover:bg-accent/50 transition-colors"
+            >
               <CardContent className="p-4">
                 <div className="flex items-center space-x-4">
                   <div className={`p-3 rounded-xl ${feature.color}`}>
                     <feature.icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium text-foreground">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{feature.description}</p>
+                    <h3 className="font-medium text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -207,8 +227,12 @@ export default function DarkThemeDemo() {
         {/* Platform Support */}
         <Card className="border-border">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg text-foreground">💻 Поддержка платформ</CardTitle>
-            <CardDescription className="text-muted-foreground">Работает на всех устройствах</CardDescription>
+            <CardTitle className="text-lg text-foreground">
+              💻 Поддержка платформ
+            </CardTitle>
+            <CardDescription className="text-muted-foreground">
+              Работает на всех устройствах
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4 text-center">
@@ -218,11 +242,16 @@ export default function DarkThemeDemo() {
                 { icon: "💻", name: "Windows" },
                 { icon: "🍎", name: "macOS" },
                 { icon: "🐧", name: "Linux" },
-                { icon: "🌐", name: "Router" }
+                { icon: "🌐", name: "Router" },
               ].map((platform, index) => (
-                <div key={index} className="flex flex-col items-center space-y-1">
+                <div
+                  key={index}
+                  className="flex flex-col items-center space-y-1"
+                >
                   <div className="text-2xl">{platform.icon}</div>
-                  <div className="text-xs text-muted-foreground">{platform.name}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {platform.name}
+                  </div>
                 </div>
               ))}
             </div>
@@ -237,7 +266,9 @@ export default function DarkThemeDemo() {
                 <Wifi className="w-4 h-4 text-telegram-blue" />
               </div>
               <div className="text-lg font-bold text-foreground">12,584</div>
-              <div className="text-xs text-muted-foreground leading-tight">Активных пользователей</div>
+              <div className="text-xs text-muted-foreground leading-tight">
+                Активных пользователей
+              </div>
             </div>
           </Card>
           <Card className="text-center p-4 border-border">
@@ -246,7 +277,9 @@ export default function DarkThemeDemo() {
                 <Shield className="w-4 h-4 text-green-500" />
               </div>
               <div className="text-lg font-bold text-foreground">4.9</div>
-              <div className="text-xs text-muted-foreground leading-tight">Рейтинг сервиса</div>
+              <div className="text-xs text-muted-foreground leading-tight">
+                Рейтинг сервиса
+              </div>
             </div>
           </Card>
         </div>
@@ -259,9 +292,15 @@ export default function DarkThemeDemo() {
                 <Moon className="w-4 h-4 mr-2" />
                 🌙 Темная тема активна!
               </div>
-              <div className="text-sm text-muted-foreground">Стильный дизайн для использования в темное время суток</div>
+              <div className="text-sm text-muted-foreground">
+                Стильный дизайн для использования в темное время суток
+              </div>
               <Link to="/">
-                <Button size="sm" variant="outline" className="border-purple-500/20 text-purple-400 hover:bg-purple-500/10">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-purple-500/20 text-purple-400 hover:bg-purple-500/10"
+                >
                   Вернуться на главную
                 </Button>
               </Link>
@@ -277,8 +316,18 @@ export default function DarkThemeDemo() {
             {[
               { id: "home", label: "Главная", icon: Shield, route: "/" },
               { id: "config", label: "VPN", icon: QrCode, route: "/config" },
-              { id: "instructions", label: "Инструкции", icon: Smartphone, route: "/instructions" },
-              { id: "subscription", label: "Подписка", icon: Clock, route: "/subscription" }
+              {
+                id: "instructions",
+                label: "Инструкции",
+                icon: Smartphone,
+                route: "/instructions",
+              },
+              {
+                id: "subscription",
+                label: "Подписка",
+                icon: Clock,
+                route: "/subscription",
+              },
             ].map((tab) => (
               <Link
                 key={tab.id}

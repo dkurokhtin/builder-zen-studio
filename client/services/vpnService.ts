@@ -1,23 +1,23 @@
-import { 
-  VpnUser, 
-  VpnConfig, 
-  SubscriptionPlansResponse, 
+import {
+  VpnUser,
+  VpnConfig,
+  SubscriptionPlansResponse,
   ServiceStatsResponse,
   ActivateTrialRequest,
   ExtendSubscriptionRequest,
   ToggleAutoRenewalRequest,
-  SubscriptionActionResponse
-} from '@shared/vpn-api';
+  SubscriptionActionResponse,
+} from "@shared/vpn-api";
 
 // Класс для работы с VPN API
 class VpnService {
-  private baseUrl = '/api/vpn';
-  
+  private baseUrl = "/api/vpn";
+
   // Получить информацию о пользователе
   async getUserInfo(telegramId: string): Promise<VpnUser> {
     const response = await fetch(`${this.baseUrl}/user/${telegramId}`);
     if (!response.ok) {
-      throw new Error('Ошибка получения данных пользователя');
+      throw new Error("Ошибка получения данных пользователя");
     }
     return response.json();
   }
@@ -27,9 +27,9 @@ class VpnService {
     const response = await fetch(`${this.baseUrl}/config/${telegramId}`);
     if (!response.ok) {
       if (response.status === 403) {
-        throw new Error('Подписка неактивна');
+        throw new Error("Подписка неактивна");
       }
-      throw new Error('Ошибка получения VPN конфигурации');
+      throw new Error("Ошибка получения VPN конфигурации");
     }
     return response.json();
   }
@@ -38,7 +38,7 @@ class VpnService {
   async getSubscriptionPlans(): Promise<SubscriptionPlansResponse> {
     const response = await fetch(`${this.baseUrl}/plans`);
     if (!response.ok) {
-      throw new Error('Ошибка получения тарифных планов');
+      throw new Error("Ошибка получения тарифных планов");
     }
     return response.json();
   }
@@ -47,67 +47,76 @@ class VpnService {
   async getServiceStats(): Promise<ServiceStatsResponse> {
     const response = await fetch(`${this.baseUrl}/stats`);
     if (!response.ok) {
-      throw new Error('Ошибка получения статистики');
+      throw new Error("Ошибка получения статистики");
     }
     return response.json();
   }
 
   // Активировать пробный период
-  async activateFreeTrial(telegramId: string): Promise<SubscriptionActionResponse> {
+  async activateFreeTrial(
+    telegramId: string,
+  ): Promise<SubscriptionActionResponse> {
     const response = await fetch(`${this.baseUrl}/trial`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ telegramId } as ActivateTrialRequest),
     });
-    
+
     if (!response.ok) {
       const error = await response.json();
-      throw new Error(error.message || 'Ошибка активации пробного периода');
+      throw new Error(error.message || "Ошибка активации пробного периода");
     }
     return response.json();
   }
 
   // Продлить подписку
-  async extendSubscription(telegramId: string, planId: string): Promise<SubscriptionActionResponse> {
+  async extendSubscription(
+    telegramId: string,
+    planId: string,
+  ): Promise<SubscriptionActionResponse> {
     const response = await fetch(`${this.baseUrl}/extend`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ telegramId, planId } as ExtendSubscriptionRequest),
     });
-    
+
     if (!response.ok) {
       const error = await response.json();
-      throw new Error(error.message || 'Ошибка продления подписки');
+      throw new Error(error.message || "Ошибка продления подписки");
     }
     return response.json();
   }
 
   // Переключить автопродление
-  async toggleAutoRenewal(telegramId: string): Promise<SubscriptionActionResponse> {
+  async toggleAutoRenewal(
+    telegramId: string,
+  ): Promise<SubscriptionActionResponse> {
     const response = await fetch(`${this.baseUrl}/auto-renewal`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ telegramId } as ToggleAutoRenewalRequest),
     });
-    
+
     if (!response.ok) {
       const error = await response.json();
-      throw new Error(error.message || 'Ошибка изменения автопродления');
+      throw new Error(error.message || "Ошибка изменения автопродления");
     }
     return response.json();
   }
 
   // Обновить статус подписки
-  async refreshSubscriptionStatus(telegramId: string): Promise<Partial<VpnUser>> {
+  async refreshSubscriptionStatus(
+    telegramId: string,
+  ): Promise<Partial<VpnUser>> {
     const response = await fetch(`${this.baseUrl}/refresh/${telegramId}`);
     if (!response.ok) {
-      throw new Error('Ошибка обновления статуса подписки');
+      throw new Error("Ошибка обновления статуса подписки");
     }
     return response.json();
   }
@@ -118,7 +127,7 @@ class VpnService {
       await navigator.clipboard.writeText(text);
       return true;
     } catch (err) {
-      console.error('Ошибка копирования: ', err);
+      console.error("Ошибка копирования: ", err);
       return false;
     }
   }
@@ -147,7 +156,7 @@ class VpnService {
 
   // Проверить доступн��сть Telegram WebApp API
   isTelegramWebApp(): boolean {
-    return typeof window !== 'undefined' && !!(window as any).Telegram?.WebApp;
+    return typeof window !== "undefined" && !!(window as any).Telegram?.WebApp;
   }
 
   // Настроить Telegram WebApp (для реальной интеграции)
@@ -156,11 +165,11 @@ class VpnService {
       const tg = (window as any).Telegram.WebApp;
       tg.ready();
       tg.expand();
-      
+
       // Настроить цвета темы
-      tg.setHeaderColor('#2481CC'); // telegram-blue
-      tg.setBackgroundColor('#ffffff');
-      
+      tg.setHeaderColor("#2481CC"); // telegram-blue
+      tg.setBackgroundColor("#ffffff");
+
       return tg;
     }
     return null;

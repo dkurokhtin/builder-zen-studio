@@ -1,19 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { 
+import {
   ArrowLeft,
-  Download, 
+  Download,
   ExternalLink,
   PlayCircle,
   CheckCircle,
   Smartphone,
   Laptop,
-  Wifi
+  Wifi,
 } from "lucide-react";
 
 export default function Instructions() {
@@ -26,33 +32,49 @@ export default function Instructions() {
       icon: "🤖",
       color: "bg-green-500",
       apps: [
-        { name: "v2rayNG", recommended: true, link: "https://play.google.com/store/apps/details?id=com.v2ray.ang" },
-        { name: "Nekoray", recommended: false, link: "https://github.com/MatsuriDayo/nekoray/releases" }
+        {
+          name: "v2rayNG",
+          recommended: true,
+          link: "https://play.google.com/store/apps/details?id=com.v2ray.ang",
+        },
+        {
+          name: "Nekoray",
+          recommended: false,
+          link: "https://github.com/MatsuriDayo/nekoray/releases",
+        },
       ],
       steps: [
         "Скачайте приложение v2rayNG из Google Play",
         "Откройте приложение и нажмите '+' в правом верхнем углу",
         "Выберите 'Импорт конфигурации из буфера обмена'",
         "Скопируйте VPN-ссылку и вставьте в приложение",
-        "Нажмите на конфигурацию и выберите 'Подключиться'"
-      ]
+        "Нажмите на конфигурацию и выберите 'Подключиться'",
+      ],
     },
     {
       id: "ios",
       name: "iOS",
-      icon: "🍏", 
+      icon: "🍏",
       color: "bg-blue-500",
       apps: [
-        { name: "FoXray", recommended: true, link: "https://apps.apple.com/app/foxray/id6448898396" },
-        { name: "Streisand", recommended: false, link: "https://apps.apple.com/app/streisand/id6450534064" }
+        {
+          name: "FoXray",
+          recommended: true,
+          link: "https://apps.apple.com/app/foxray/id6448898396",
+        },
+        {
+          name: "Streisand",
+          recommended: false,
+          link: "https://apps.apple.com/app/streisand/id6450534064",
+        },
       ],
       steps: [
         "Установите FoXray из App Store",
         "Откройте приложение и нажмите '+' или 'Add'",
         "Выберите 'Import from Clipboard' или 'Импорт из буфера'",
         "Скопируйте VPN-ссылку из бота",
-        "Нажмите на серверную конфигурацию для подключения"
-      ]
+        "Нажмите на серверную конфигурацию для подключения",
+      ],
     },
     {
       id: "windows",
@@ -60,33 +82,49 @@ export default function Instructions() {
       icon: "💻",
       color: "bg-blue-600",
       apps: [
-        { name: "v2rayN", recommended: true, link: "https://github.com/2dust/v2rayN/releases" },
-        { name: "Nekoray", recommended: false, link: "https://github.com/MatsuriDayo/nekoray/releases" }
+        {
+          name: "v2rayN",
+          recommended: true,
+          link: "https://github.com/2dust/v2rayN/releases",
+        },
+        {
+          name: "Nekoray",
+          recommended: false,
+          link: "https://github.com/MatsuriDayo/nekoray/releases",
+        },
       ],
       steps: [
         "Скачайте v2rayN с GitHub (файл v2rayN-Core.zip)",
         "Распакуйте архив и запустите v2rayN.exe",
         "Кликните правой кнопкой на значок в трее",
         "Выберите 'Добавить сервер' → 'Импорт ссылки из буфера обмена'",
-        "Скопируйте VPN-ссылку и нажмите OK, затем 'Подключиться'"
-      ]
+        "Скопируйте VPN-ссылку и нажмите OK, затем 'Подключиться'",
+      ],
     },
     {
       id: "macos",
-      name: "macOS", 
+      name: "macOS",
       icon: "🍎",
       color: "bg-muted",
       apps: [
-        { name: "FoXray", recommended: true, link: "https://apps.apple.com/app/foxray/id6448898396" },
-        { name: "V2rayU", recommended: false, link: "https://github.com/yanue/V2rayU/releases" }
+        {
+          name: "FoXray",
+          recommended: true,
+          link: "https://apps.apple.com/app/foxray/id6448898396",
+        },
+        {
+          name: "V2rayU",
+          recommended: false,
+          link: "https://github.com/yanue/V2rayU/releases",
+        },
       ],
       steps: [
         "Установите FoXray из Mac App Store",
         "Откройте приложение и нажмите '+' для добавления сервера",
         "Выберите 'Import from Clipboard'",
         "Скопируйте VPN-ссылку из Telegram бота",
-        "Выберите сервер и нажмите кнопку подключения"
-      ]
+        "Выберите сервер и нажмите кнопку подключения",
+      ],
     },
     {
       id: "linux",
@@ -94,35 +132,46 @@ export default function Instructions() {
       icon: "🐧",
       color: "bg-yellow-600",
       apps: [
-        { name: "Nekoray", recommended: true, link: "https://github.com/MatsuriDayo/nekoray/releases" },
-        { name: "v2ray-core", recommended: false, link: "https://github.com/v2fly/v2ray-core/releases" }
+        {
+          name: "Nekoray",
+          recommended: true,
+          link: "https://github.com/MatsuriDayo/nekoray/releases",
+        },
+        {
+          name: "v2ray-core",
+          recommended: false,
+          link: "https://github.com/v2fly/v2ray-core/releases",
+        },
       ],
       steps: [
         "Скачайте Nekoray AppImage с GitHub",
         "Сделайте файл исполняемым: chmod +x nekoray-*.AppImage",
         "Запустите приложение: ./nekoray-*.AppImage",
         "Нажмите 'Add' и выберите 'Import from clipboard'",
-        "Вставьте VPN-ссылку и нажмите 'Start'"
-      ]
-    }
+        "Вставьте VPN-ссылку и нажмите 'Start'",
+      ],
+    },
   ];
 
   const troubleshooting = [
     {
       problem: "Не удается подключиться",
-      solution: "Проверьте, ак��ивна ли подписка. Попробуйте переподключиться к интернету.",
-      icon: "🔧"
+      solution:
+        "Проверьте, ак��ивна ли подписка. Попробуйте переподключиться к интернету.",
+      icon: "🔧",
     },
     {
       problem: "Низкая скорость",
-      solution: "Попробуйте переключиться на другой сервер или проверьте загрузку сети.",
-      icon: "⚡"
+      solution:
+        "Попробуйте переключиться на другой сервер или проверьте загрузку сети.",
+      icon: "⚡",
     },
     {
       problem: "Приложение не запускается",
-      solution: "Перезагрузите устройство и попробуйте снова. Проверьте версию приложения.",
-      icon: "🔄"
-    }
+      solution:
+        "Перезагрузите устройство и попробуйте снова. Проверьте версию приложения.",
+      icon: "🔄",
+    },
   ];
 
   return (
@@ -139,7 +188,9 @@ export default function Instructions() {
               </Link>
               <div>
                 <h1 className="font-semibold text-foreground">Инструкции</h1>
-                <p className="text-xs text-muted-foreground">Настройка VPN на устройствах</p>
+                <p className="text-xs text-muted-foreground">
+                  Настройка VPN на устройствах
+                </p>
               </div>
             </div>
             <ThemeToggle />
@@ -148,7 +199,6 @@ export default function Instructions() {
       </div>
 
       <div className="max-w-md mx-auto px-4 py-6 space-y-6">
-        
         {/* Quick Start Card */}
         <Card className="bg-gradient-to-r from-telegram-blue to-green-500 text-white border-0 shadow-lg">
           <CardHeader className="pb-4">
@@ -187,150 +237,210 @@ export default function Instructions() {
         {/* Platform Selection */}
         <Tabs defaultValue="android" className="w-full">
           <TabsList className="grid w-full grid-cols-3 mb-6">
-            <TabsTrigger value="android" className="text-xs">📱 Мобильные</TabsTrigger>
-            <TabsTrigger value="windows" className="text-xs">💻 Компьютер</TabsTrigger>
-            <TabsTrigger value="other" className="text-xs">📖 Другие</TabsTrigger>
+            <TabsTrigger value="android" className="text-xs">
+              📱 Мобильные
+            </TabsTrigger>
+            <TabsTrigger value="windows" className="text-xs">
+              💻 Компьютер
+            </TabsTrigger>
+            <TabsTrigger value="other" className="text-xs">
+              📖 Другие
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="android" className="space-y-4">
-            {platforms.filter(p => ["android", "ios"].includes(p.id)).map((platform) => (
-              <Card key={platform.id} className="border-border">
-                <CardHeader>
-                  <CardTitle className="text-lg text-foreground flex items-center">
-                    <span className="text-2xl mr-3">{platform.icon}</span>
-                    Инструкция для {platform.name}
-                  </CardTitle>
-                  <CardDescription>
-                    Пошаговая настройка VPN на {platform.name}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {/* Recommended Apps */}
-                  <div>
-                    <h4 className="font-medium text-foreground mb-2">Рекомендуемые приложения:</h4>
-                    <div className="space-y-2">
-                      {platform.apps.map((app, index) => (
-                        <div key={index} className="flex items-center justify-between p-2 bg-muted/50 rounded-lg">
-                          <div className="flex items-center space-x-2">
-                            <span className="font-medium">{app.name}</span>
-                            {app.recommended && (
-                              <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
-                                Рекомендуется
-                              </Badge>
-                            )}
+            {platforms
+              .filter((p) => ["android", "ios"].includes(p.id))
+              .map((platform) => (
+                <Card key={platform.id} className="border-border">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-foreground flex items-center">
+                      <span className="text-2xl mr-3">{platform.icon}</span>
+                      Инструкция для {platform.name}
+                    </CardTitle>
+                    <CardDescription>
+                      Пошаговая настройка VPN на {platform.name}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {/* Recommended Apps */}
+                    <div>
+                      <h4 className="font-medium text-foreground mb-2">
+                        Рекомендуемые приложения:
+                      </h4>
+                      <div className="space-y-2">
+                        {platform.apps.map((app, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center justify-between p-2 bg-muted/50 rounded-lg"
+                          >
+                            <div className="flex items-center space-x-2">
+                              <span className="font-medium">{app.name}</span>
+                              {app.recommended && (
+                                <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
+                                  Рекомендуется
+                                </Badge>
+                              )}
+                            </div>
+                            <Button size="sm" variant="outline" asChild>
+                              <a
+                                href={app.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <ExternalLink className="w-3 h-3" />
+                              </a>
+                            </Button>
                           </div>
-                          <Button size="sm" variant="outline" asChild>
-                            <a href={app.link} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-3 h-3" />
-                            </a>
-                          </Button>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Steps */}
-                  <div>
-                    <h4 className="font-medium text-foreground mb-2">Шаги настройки:</h4>
-                    <div className="space-y-2">
-                      {platform.steps.map((step, index) => (
-                        <div key={index} className="flex items-start space-x-3 p-2">
-                          <div className="w-6 h-6 bg-telegram-blue rounded-full flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
-                            {index + 1}
+                    {/* Steps */}
+                    <div>
+                      <h4 className="font-medium text-foreground mb-2">
+                        Шаги настройки:
+                      </h4>
+                      <div className="space-y-2">
+                        {platform.steps.map((step, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start space-x-3 p-2"
+                          >
+                            <div className="w-6 h-6 bg-telegram-blue rounded-full flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+                              {index + 1}
+                            </div>
+                            <div className="text-sm text-foreground pt-1">
+                              {step}
+                            </div>
                           </div>
-                          <div className="text-sm text-foreground pt-1">{step}</div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  <Link to="/config">
-                    <Button className="w-full bg-telegram-blue hover:bg-telegram-blue-dark">
-                      Получить VPN-ссылку
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
+                    <Link to="/config">
+                      <Button className="w-full bg-telegram-blue hover:bg-telegram-blue-dark">
+                        Получить VPN-ссылку
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
           </TabsContent>
 
           <TabsContent value="windows" className="space-y-4">
-            {platforms.filter(p => ["windows", "macos", "linux"].includes(p.id)).map((platform) => (
-              <Card key={platform.id} className="border-border">
-                <CardHeader>
-                  <CardTitle className="text-lg text-foreground flex items-center">
-                    <span className="text-2xl mr-3">{platform.icon}</span>
-                    Инструкция для {platform.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {/* Recommended Apps */}
-                  <div>
-                    <h4 className="font-medium text-foreground mb-2">Рекомендуемые приложения:</h4>
-                    <div className="space-y-2">
-                      {platform.apps.map((app, index) => (
-                        <div key={index} className="flex items-center justify-between p-2 bg-muted/50 rounded-lg">
-                          <div className="flex items-center space-x-2">
-                            <span className="font-medium">{app.name}</span>
-                            {app.recommended && (
-                              <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
-                                Рекомендуется
-                              </Badge>
-                            )}
+            {platforms
+              .filter((p) => ["windows", "macos", "linux"].includes(p.id))
+              .map((platform) => (
+                <Card key={platform.id} className="border-border">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-foreground flex items-center">
+                      <span className="text-2xl mr-3">{platform.icon}</span>
+                      Инструкция для {platform.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {/* Recommended Apps */}
+                    <div>
+                      <h4 className="font-medium text-foreground mb-2">
+                        Рекомендуемые приложения:
+                      </h4>
+                      <div className="space-y-2">
+                        {platform.apps.map((app, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center justify-between p-2 bg-muted/50 rounded-lg"
+                          >
+                            <div className="flex items-center space-x-2">
+                              <span className="font-medium">{app.name}</span>
+                              {app.recommended && (
+                                <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
+                                  Рекомендуется
+                                </Badge>
+                              )}
+                            </div>
+                            <Button size="sm" variant="outline" asChild>
+                              <a
+                                href={app.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <ExternalLink className="w-3 h-3" />
+                              </a>
+                            </Button>
                           </div>
-                          <Button size="sm" variant="outline" asChild>
-                            <a href={app.link} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-3 h-3" />
-                            </a>
-                          </Button>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Steps */}
-                  <div>
-                    <h4 className="font-medium text-foreground mb-2">Шаги настройки:</h4>
-                    <div className="space-y-2">
-                      {platform.steps.map((step, index) => (
-                        <div key={index} className="flex items-start space-x-3 p-2">
-                          <div className="w-6 h-6 bg-telegram-blue rounded-full flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
-                            {index + 1}
+                    {/* Steps */}
+                    <div>
+                      <h4 className="font-medium text-foreground mb-2">
+                        Шаги настройки:
+                      </h4>
+                      <div className="space-y-2">
+                        {platform.steps.map((step, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start space-x-3 p-2"
+                          >
+                            <div className="w-6 h-6 bg-telegram-blue rounded-full flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+                              {index + 1}
+                            </div>
+                            <div className="text-sm text-foreground pt-1">
+                              {step}
+                            </div>
                           </div>
-                          <div className="text-sm text-foreground pt-1">{step}</div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  <Link to="/config">
-                    <Button className="w-full bg-telegram-blue hover:bg-telegram-blue-dark">
-                      Получить VPN-ссылку
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
+                    <Link to="/config">
+                      <Button className="w-full bg-telegram-blue hover:bg-telegram-blue-dark">
+                        Получить VPN-ссылку
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
           </TabsContent>
 
           <TabsContent value="other" className="space-y-4">
             {/* Additional Platforms */}
             <Card className="border-border">
               <CardHeader>
-                <CardTitle className="text-lg text-foreground">📡 Другие устройства</CardTitle>
+                <CardTitle className="text-lg text-foreground">
+                  📡 Другие устройства
+                </CardTitle>
                 <CardDescription>
                   Дополнительные инструкции и ссылки
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="https://dkurokhtin.github.io/vpn-docs/#/android" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  asChild
+                >
+                  <a
+                    href="https://dkurokhtin.github.io/vpn-docs/#/android"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     🤖 Подробная инструкция для Android
                     <ExternalLink className="w-4 h-4 ml-auto" />
                   </a>
                 </Button>
-                <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="https://dkurokhtin.github.io/vpn-docs/#/ios" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start"
+                  asChild
+                >
+                  <a
+                    href="https://dkurokhtin.github.io/vpn-docs/#/ios"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     🍏 Подробная инструкция для iPhone
                     <ExternalLink className="w-4 h-4 ml-auto" />
                   </a>
@@ -351,10 +461,10 @@ export default function Instructions() {
         {/* Troubleshooting */}
         <Card className="border-border">
           <CardHeader>
-            <CardTitle className="text-lg text-foreground">🔧 Реш��ние проблем</CardTitle>
-            <CardDescription>
-              Частые вопросы и их решения
-            </CardDescription>
+            <CardTitle className="text-lg text-foreground">
+              🔧 Реш��ние проблем
+            </CardTitle>
+            <CardDescription>Частые вопросы и их решения</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             {troubleshooting.map((item, index) => (
@@ -362,8 +472,12 @@ export default function Instructions() {
                 <div className="flex items-start space-x-3">
                   <span className="text-lg">{item.icon}</span>
                   <div>
-                    <div className="font-medium text-foreground">{item.problem}</div>
-                    <div className="text-sm text-muted-foreground mt-1">{item.solution}</div>
+                    <div className="font-medium text-foreground">
+                      {item.problem}
+                    </div>
+                    <div className="text-sm text-muted-foreground mt-1">
+                      {item.solution}
+                    </div>
                   </div>
                 </div>
               </div>

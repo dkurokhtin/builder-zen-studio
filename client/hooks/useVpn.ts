@@ -1,6 +1,11 @@
-import { useState, useEffect } from 'react';
-import { vpnService } from '@/services/vpnService';
-import { VpnUser, VpnConfig, SubscriptionPlan, ServiceStats } from '@shared/vpn-api';
+import { useState, useEffect } from "react";
+import { vpnService } from "@/services/vpnService";
+import {
+  VpnUser,
+  VpnConfig,
+  SubscriptionPlan,
+  ServiceStats,
+} from "@shared/vpn-api";
 
 // Хук для управления данными пользователя VPN
 export function useVpnUser() {
@@ -16,7 +21,7 @@ export function useVpnUser() {
       const userData = await vpnService.getUserInfo(telegramId);
       setUser(userData);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Ошибка загрузки данных');
+      setError(err instanceof Error ? err.message : "Ошибка загрузки данных");
     } finally {
       setLoading(false);
     }
@@ -47,7 +52,9 @@ export function useVpnConfig() {
       const configData = await vpnService.getVpnConfig(telegramId);
       setConfig(configData);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Ошибка загрузки конфигурации');
+      setError(
+        err instanceof Error ? err.message : "Ошибка загрузки конфигурации",
+      );
     } finally {
       setLoading(false);
     }
@@ -69,7 +76,7 @@ export function useSubscriptionPlans() {
         const data = await vpnService.getSubscriptionPlans();
         setPlans(data.plans);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Ошибка загрузки планов');
+        setError(err instanceof Error ? err.message : "Ошибка загрузки планов");
       } finally {
         setLoading(false);
       }
@@ -94,7 +101,9 @@ export function useServiceStats() {
         const statsData = await vpnService.getServiceStats();
         setStats(statsData);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Ошибка загрузки статистики');
+        setError(
+          err instanceof Error ? err.message : "Ошибка загрузки статистики",
+        );
       } finally {
         setLoading(false);
       }
@@ -119,7 +128,10 @@ export function useSubscriptionActions() {
       const result = await vpnService.activateFreeTrial(telegramId);
       return result;
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Ошибка активации пробного периода';
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : "Ошибка активации пробного периода";
       setError(errorMessage);
       throw new Error(errorMessage);
     } finally {
@@ -135,7 +147,8 @@ export function useSubscriptionActions() {
       const result = await vpnService.extendSubscription(telegramId, planId);
       return result;
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Ошибка продления подписки';
+      const errorMessage =
+        err instanceof Error ? err.message : "Ошибка продления подписки";
       setError(errorMessage);
       throw new Error(errorMessage);
     } finally {
@@ -151,7 +164,8 @@ export function useSubscriptionActions() {
       const result = await vpnService.toggleAutoRenewal(telegramId);
       return result;
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Ошибка изменения автопродления';
+      const errorMessage =
+        err instanceof Error ? err.message : "Ошибка изменения автопродления";
       setError(errorMessage);
       throw new Error(errorMessage);
     } finally {
@@ -167,7 +181,8 @@ export function useSubscriptionActions() {
       const result = await vpnService.refreshSubscriptionStatus(telegramId);
       return result;
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Ошибка обновления статуса';
+      const errorMessage =
+        err instanceof Error ? err.message : "Ошибка обновления статуса";
       setError(errorMessage);
       throw new Error(errorMessage);
     } finally {
@@ -181,7 +196,7 @@ export function useSubscriptionActions() {
     activateFreeTrial,
     extendSubscription,
     toggleAutoRenewal,
-    refreshSubscriptionStatus
+    refreshSubscriptionStatus,
   };
 }
 
@@ -198,7 +213,7 @@ export function useClipboard() {
       }
       return success;
     } catch (err) {
-      console.error('Ошибка копирования:', err);
+      console.error("Ошибка копирования:", err);
       return false;
     }
   };

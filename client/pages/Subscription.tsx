@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { 
+import {
   ArrowLeft,
   Calendar,
   CreditCard,
@@ -13,7 +19,7 @@ import {
   AlertCircle,
   Gift,
   Zap,
-  RefreshCw
+  RefreshCw,
 } from "lucide-react";
 
 export default function Subscription() {
@@ -26,7 +32,7 @@ export default function Subscription() {
     autoRenewal: false,
     hasFreeTrial: false,
     totalDays: 30,
-    price: "299 ₽/месяц"
+    price: "299 ₽/месяц",
   };
 
   const plans = [
@@ -35,7 +41,7 @@ export default function Subscription() {
       price: "299 ₽",
       period: "месяц",
       discount: null,
-      popular: false
+      popular: false,
     },
     {
       name: "3 месяца",
@@ -43,7 +49,7 @@ export default function Subscription() {
       originalPrice: "897 ₽",
       period: "3 месяца",
       discount: "Скидка 11%",
-      popular: true
+      popular: true,
     },
     {
       name: "6 месяцев",
@@ -51,7 +57,7 @@ export default function Subscription() {
       originalPrice: "1794 ₽",
       period: "6 месяцев",
       discount: "Скидка 16%",
-      popular: false
+      popular: false,
     },
     {
       name: "12 месяцев",
@@ -59,8 +65,8 @@ export default function Subscription() {
       originalPrice: "3588 ₽",
       period: "год",
       discount: "Скидка 22%",
-      popular: false
-    }
+      popular: false,
+    },
   ];
 
   const features = [
@@ -69,7 +75,7 @@ export default function Subscription() {
     "📱 Поддержка всех устройств",
     "🔒 Без логов и анонимность",
     "⚡ Безлимитный трафик",
-    "🛡️ 24/7 поддержка"
+    "🛡️ 24/7 поддержка",
   ];
 
   return (
@@ -86,7 +92,9 @@ export default function Subscription() {
               </Link>
               <div>
                 <h1 className="font-semibold text-foreground">Подписка</h1>
-                <p className="text-xs text-muted-foreground">Управление и продление</p>
+                <p className="text-xs text-muted-foreground">
+                  Управление и продление
+                </p>
               </div>
             </div>
             <ThemeToggle />
@@ -95,27 +103,48 @@ export default function Subscription() {
       </div>
 
       <div className="max-w-md mx-auto px-4 py-6 space-y-6">
-        
         {/* Current Status */}
-        <Card className={`border-0 shadow-lg ${subscriptionData.isActive 
-          ? 'bg-gradient-to-r from-green-500 to-telegram-blue text-white' 
-          : 'bg-gradient-to-r from-red-500/10 to-orange-500/10 border-red-500/20'
-        }`}>
+        <Card
+          className={`border-0 shadow-lg ${
+            subscriptionData.isActive
+              ? "bg-gradient-to-r from-green-500 to-telegram-blue text-white"
+              : "bg-gradient-to-r from-red-500/10 to-orange-500/10 border-red-500/20"
+          }`}
+        >
           <CardHeader className="pb-4">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className={`flex items-center ${subscriptionData.isActive ? 'text-white' : 'text-red-600'}`}>
-                  {subscriptionData.isActive ? <CheckCircle className="w-5 h-5 mr-2" /> : <AlertCircle className="w-5 h-5 mr-2" />}
-                  {subscriptionData.isActive ? 'Подписка активна' : 'Подписка истекла'}
+                <CardTitle
+                  className={`flex items-center ${subscriptionData.isActive ? "text-white" : "text-red-600"}`}
+                >
+                  {subscriptionData.isActive ? (
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                  ) : (
+                    <AlertCircle className="w-5 h-5 mr-2" />
+                  )}
+                  {subscriptionData.isActive
+                    ? "Подписка активна"
+                    : "Подписка истекла"}
                 </CardTitle>
-                <CardDescription className={subscriptionData.isActive ? 'text-white/80' : 'text-muted-foreground'}>
-                  {subscriptionData.isActive 
-                    ? `Осталось ${subscriptionData.daysLeft} дней из ${subscriptionData.totalDays}`
-                    : 'Продлите для продолжения использования'
+                <CardDescription
+                  className={
+                    subscriptionData.isActive
+                      ? "text-white/80"
+                      : "text-muted-foreground"
                   }
+                >
+                  {subscriptionData.isActive
+                    ? `Осталось ${subscriptionData.daysLeft} дней из ${subscriptionData.totalDays}`
+                    : "Продлите для продолжения использования"}
                 </CardDescription>
               </div>
-              <Badge className={subscriptionData.isActive ? 'bg-white/20 text-white border-white/30' : 'bg-red-500/20 text-red-600 border-red-500/30'}>
+              <Badge
+                className={
+                  subscriptionData.isActive
+                    ? "bg-white/20 text-white border-white/30"
+                    : "bg-red-500/20 text-red-600 border-red-500/30"
+                }
+              >
                 {subscriptionData.plan}
               </Badge>
             </div>
@@ -128,9 +157,11 @@ export default function Subscription() {
                   <span>{subscriptionData.subscriptionEnd}</span>
                 </div>
                 <div className="w-full bg-white/20 rounded-full h-2">
-                  <div 
+                  <div
                     className="bg-white rounded-full h-2 transition-all duration-300"
-                    style={{ width: `${(subscriptionData.daysLeft / subscriptionData.totalDays) * 100}%` }}
+                    style={{
+                      width: `${(subscriptionData.daysLeft / subscriptionData.totalDays) * 100}%`,
+                    }}
                   ></div>
                 </div>
               </div>
@@ -147,8 +178,12 @@ export default function Subscription() {
                   <Gift className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
-                  <div className="font-semibold text-green-600">🆓 Бесплатный пробный период</div>
-                  <div className="text-sm text-muted-foreground">7 дней полного доступа для новых пользователей</div>
+                  <div className="font-semibold text-green-600">
+                    🆓 Бесплатный пробный период
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    7 дней полного доступа для новых пользователей
+                  </div>
                 </div>
               </div>
               <Button className="w-full mt-3 bg-green-500 hover:bg-green-600 text-white">
@@ -160,44 +195,63 @@ export default function Subscription() {
 
         {/* Subscription Plans */}
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-foreground">💳 Тарифные планы</h2>
-          
+          <h2 className="text-lg font-semibold text-foreground">
+            💳 Тарифные планы
+          </h2>
+
           <div className="space-y-3">
             {plans.map((plan, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className={`border cursor-pointer transition-all hover:shadow-md ${
-                  plan.popular 
-                    ? 'border-telegram-blue bg-telegram-blue/5' 
-                    : 'border-gray-200 hover:border-telegram-blue/50'
+                  plan.popular
+                    ? "border-telegram-blue bg-telegram-blue/5"
+                    : "border-gray-200 hover:border-telegram-blue/50"
                 }`}
               >
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <div className="flex items-center space-x-2">
-                        <span className="font-semibold text-foreground">{plan.name}</span>
+                        <span className="font-semibold text-foreground">
+                          {plan.name}
+                        </span>
                         {plan.popular && (
-                          <Badge className="bg-telegram-blue text-white">Популярный</Badge>
+                          <Badge className="bg-telegram-blue text-white">
+                            Популярный
+                          </Badge>
                         )}
                         {plan.discount && (
-                          <Badge variant="secondary" className="bg-green-500/10 text-green-600 border-green-500/20">
+                          <Badge
+                            variant="secondary"
+                            className="bg-green-500/10 text-green-600 border-green-500/20"
+                          >
                             {plan.discount}
                           </Badge>
                         )}
                       </div>
                       <div className="flex items-center space-x-2 mt-1">
-                        <span className="text-lg font-bold text-foreground">{plan.price}</span>
+                        <span className="text-lg font-bold text-foreground">
+                          {plan.price}
+                        </span>
                         {plan.originalPrice && (
-                          <span className="text-sm text-muted-foreground line-through">{plan.originalPrice}</span>
+                          <span className="text-sm text-muted-foreground line-through">
+                            {plan.originalPrice}
+                          </span>
                         )}
                       </div>
-                      <div className="text-sm text-muted-foreground">за {plan.period}</div>
+                      <div className="text-sm text-muted-foreground">
+                        за {plan.period}
+                      </div>
                     </div>
-                    <Button 
+                    <Button
                       size="sm"
-                      className={plan.popular ? 'bg-telegram-blue hover:bg-telegram-blue-dark' : ''}
-                      variant={plan.popular ? 'default' : 'outline'}
+                      className={
+                        plan.popular
+                          ? "bg-telegram-blue hover:bg-telegram-blue-dark"
+                          : ""
+                      }
+                      variant={plan.popular ? "default" : "outline"}
                     >
                       Выбрать
                     </Button>
@@ -211,7 +265,9 @@ export default function Subscription() {
         {/* Features */}
         <Card className="border-border">
           <CardHeader>
-            <CardTitle className="text-lg text-foreground">⭐ Что включено</CardTitle>
+            <CardTitle className="text-lg text-foreground">
+              ⭐ Что включено
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
@@ -228,7 +284,9 @@ export default function Subscription() {
         {/* Payment Methods */}
         <Card className="border-border">
           <CardHeader>
-            <CardTitle className="text-lg text-foreground">💳 Способы оплаты</CardTitle>
+            <CardTitle className="text-lg text-foreground">
+              💳 Способы оплаты
+            </CardTitle>
             <CardDescription>Выберите удобный способ оплаты</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -258,18 +316,21 @@ export default function Subscription() {
                 Автопродление
               </CardTitle>
               <CardDescription>
-                {subscriptionData.autoRenewal 
-                  ? 'Подписка будет продлена автоматически'
-                  : 'Автопродление отключено'
-                }
+                {subscriptionData.autoRenewal
+                  ? "Подписка будет продлена автоматически"
+                  : "Автопродление отключено"}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
-                variant={subscriptionData.autoRenewal ? "destructive" : "default"} 
+              <Button
+                variant={
+                  subscriptionData.autoRenewal ? "destructive" : "default"
+                }
                 className="w-full"
               >
-                {subscriptionData.autoRenewal ? 'Отключить автопродление' : 'Включить автопродление'}
+                {subscriptionData.autoRenewal
+                  ? "Отключить автопродление"
+                  : "Включить автопродление"}
               </Button>
             </CardContent>
           </Card>
@@ -279,7 +340,9 @@ export default function Subscription() {
         <Card className="border-border">
           <CardContent className="p-4 text-center">
             <div className="space-y-3">
-              <div className="text-muted-foreground">Нужна помощь с оплатой?</div>
+              <div className="text-muted-foreground">
+                Нужна помощь с оплатой?
+              </div>
               <Link to="/support">
                 <Button variant="outline" size="sm">
                   💬 Связаться с поддержкой

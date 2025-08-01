@@ -10,7 +10,7 @@ import {
   extendSubscription,
   toggleAutoRenewal,
   refreshSubscriptionStatus,
-  getServiceStats
+  getServiceStats,
 } from "./routes/vpn";
 
 export function createServer() {

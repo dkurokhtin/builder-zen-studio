@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { 
+import {
   ArrowLeft,
   MessageCircle,
   Phone,
@@ -15,7 +21,7 @@ import {
   ExternalLink,
   Send,
   User,
-  AlertCircle
+  AlertCircle,
 } from "lucide-react";
 
 export default function Support() {
@@ -29,7 +35,7 @@ export default function Support() {
       action: "Написать в чат",
       link: "https://t.me/dkvpn_support",
       color: "bg-telegram-blue",
-      available: true
+      available: true,
     },
     {
       icon: Mail,
@@ -38,7 +44,7 @@ export default function Support() {
       action: "Отправить email",
       link: "mailto:support@dkbestvpn.com",
       color: "bg-green-500",
-      available: true
+      available: true,
     },
     {
       icon: Phone,
@@ -47,43 +53,51 @@ export default function Support() {
       action: "Позвонить",
       link: "tel:+79001234567",
       color: "bg-orange-500",
-      available: false
-    }
+      available: false,
+    },
   ];
 
   const faqItems = [
     {
       question: "Как настроить VPN на Android?",
-      answer: "Скачайте приложение v2rayNG из Google Play Store, затем скопируйте вашу VPN-ссылку из бота и импортируйте её в приложение. Подроб��ая инструкция доступна в разделе 'Инструкции'."
+      answer:
+        "Скачайте приложение v2rayNG из Google Play Store, затем скопируйте вашу VPN-ссылку из бота и импортируйте её в приложение. Подроб��ая инструкция доступна в разделе 'Инструкции'.",
     },
     {
       question: "Почему низкая скорость подключения?",
-      answer: "Проверьте ваше интернет-соединение без VPN. Попробуйте переподключиться или перезапустить приложение. Если проблема сохраняется, свяжитесь с поддержкой."
+      answer:
+        "Проверьте ваше интернет-соединение без VPN. Попробуйте переподключиться или перезапустить приложение. Если проблема сохраняется, свяжитесь с поддержкой.",
     },
     {
       question: "Как продлить подписку?",
-      answer: "Перейдите в раздел 'Подписка' в боте или mini app, выберите нужный тарифный план и оплатите любым удобным способом. Подписка активируется автоматически."
+      answer:
+        "Перейдите в раздел 'Подписка' в боте или mini app, выберите нужный тарифный план и оплатите любым удобным способом. Подписка активируется автоматически.",
     },
     {
       question: "VPN не подключается, что делать?",
-      answer: "1) Проверьте активность подписки 2) Убедитесь в правильности скопированной ссылки 3) Перезапустите приложение 4) Проверьте интернет-соединение 5) Обратитесь в поддержку."
+      answer:
+        "1) Проверьте активность подписки 2) Убедитесь в правильности скопированной ссылки 3) Перезапустите приложение 4) Проверьте интернет-соединение 5) Обратитесь в поддержку.",
     },
     {
       question: "Можно ли использовать на нескольких устройствах?",
-      answer: "Да, одну подписку можно использовать на неограниченном количестве устройств. Просто используйте одну и ту же VPN-ссылку на всех ваших устройствах."
+      answer:
+        "Да, одну подписку можно использовать на неограниченном количестве устройств. Просто используйте одну и ту же VPN-ссылку на всех ваших устройствах.",
     },
     {
       question: "Как получить возврат средств?",
-      answer: "Мы предоставляем возврат в течение 7 дней с момента покупки при технических проблемах. Обратитесь в поддержку с описанием ��роблемы."
+      answer:
+        "Мы предоставляем возврат в течение 7 дней с момента покупки при технических проблемах. Обратитесь в поддержку с описанием ��роблемы.",
     },
     {
       question: "Сохраняются ли логи активности?",
-      answer: "Нет, мы следуем политике No-logs. Мы не сохраняем информацию о ваших посещённых сайтах, IP-адресах или любой другой активности в интернете."
+      answer:
+        "Нет, мы следуем политике No-logs. Мы не сохраняем информацию о ваших посещённых сайтах, IP-адресах или любой другой активности в интернете.",
     },
     {
       question: "В каких странах есть серверы?",
-      answer: "У нас есть серверы в 15+ странах: Нидерланды, Германия, США, Канада, Япония, Сингапур, Великобр��тания, Франция и другие. Мы регулярно добавляем новые локации."
-    }
+      answer:
+        "У нас есть серверы в 15+ странах: Нидерланды, Германия, США, Канада, Япония, Сингапур, Великобр��тания, Франция и другие. Мы регулярно добавляем новые локации.",
+    },
   ];
 
   const quickActions = [
@@ -91,20 +105,20 @@ export default function Support() {
       title: "Проблемы с подключением",
       description: "VPN не подключается или часто отключается",
       action: "Решить проблему",
-      route: "/instructions"
+      route: "/instructions",
     },
     {
       title: "Вопросы по оплате",
       description: "Проблемы с продлением или возвратом",
       action: "Написать в поддержку",
-      route: "#contact"
+      route: "#contact",
     },
     {
       title: "Настройка устройств",
       description: "Помощь с установкой на разные платформы",
       action: "Посмотреть инструкции",
-      route: "/instructions"
-    }
+      route: "/instructions",
+    },
   ];
 
   return (
@@ -136,7 +150,6 @@ export default function Support() {
       </div>
 
       <div className="max-w-md mx-auto px-4 py-6 space-y-6">
-        
         {/* Support Status */}
         <Card className="bg-gradient-to-r from-telegram-blue to-green-500 text-white border-0 shadow-lg">
           <CardHeader className="pb-4">
@@ -174,14 +187,23 @@ export default function Support() {
 
         {/* Quick Actions */}
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-foreground">🚀 Быстрые действия</h2>
+          <h2 className="text-lg font-semibold text-foreground">
+            🚀 Быстрые действия
+          </h2>
           {quickActions.map((action, index) => (
-            <Card key={index} className="border-border hover:shadow-md transition-shadow cursor-pointer">
+            <Card
+              key={index}
+              className="border-border hover:shadow-md transition-shadow cursor-pointer"
+            >
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
-                    <h3 className="font-medium text-foreground">{action.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{action.description}</p>
+                    <h3 className="font-medium text-foreground">
+                      {action.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {action.description}
+                    </p>
                   </div>
                   <Link to={action.route}>
                     <Button size="sm" variant="outline">
@@ -196,7 +218,9 @@ export default function Support() {
 
         {/* Contact Methods */}
         <div className="space-y-3" id="contact">
-          <h2 className="text-lg font-semibold text-foreground">💬 Способы связи</h2>
+          <h2 className="text-lg font-semibold text-foreground">
+            💬 Способы связи
+          </h2>
           {supportChannels.map((channel, index) => (
             <Card key={index} className="border-border">
               <CardContent className="p-4">
@@ -206,7 +230,9 @@ export default function Support() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center space-x-2">
-                      <h3 className="font-medium text-foreground">{channel.title}</h3>
+                      <h3 className="font-medium text-foreground">
+                        {channel.title}
+                      </h3>
                       {channel.available ? (
                         <Badge className="bg-green-500/10 text-green-600 border-green-500/20 text-xs">
                           Доступно
@@ -217,15 +243,21 @@ export default function Support() {
                         </Badge>
                       )}
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">{channel.description}</p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {channel.description}
+                    </p>
                   </div>
-                  <Button 
-                    size="sm" 
+                  <Button
+                    size="sm"
                     disabled={!channel.available}
                     asChild={channel.available}
                   >
                     {channel.available ? (
-                      <a href={channel.link} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={channel.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         {channel.action}
                         <ExternalLink className="w-3 h-3 ml-1" />
                       </a>
@@ -241,26 +273,36 @@ export default function Support() {
 
         {/* FAQ Section */}
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-foreground">❓ Частые вопросы</h2>
+          <h2 className="text-lg font-semibold text-foreground">
+            ❓ Частые вопросы
+          </h2>
           <div className="space-y-2">
             {faqItems.map((item, index) => (
               <Card key={index} className="border-border">
                 <CardContent className="p-0">
                   <button
                     className="w-full p-4 text-left hover:bg-gray-50 transition-colors"
-                    onClick={() => setSelectedFaq(selectedFaq === index ? null : index)}
+                    onClick={() =>
+                      setSelectedFaq(selectedFaq === index ? null : index)
+                    }
                   >
                     <div className="flex items-center justify-between">
-                      <h3 className="font-medium text-foreground pr-4">{item.question}</h3>
-                      <HelpCircle className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform ${
-                        selectedFaq === index ? 'rotate-180' : ''
-                      }`} />
+                      <h3 className="font-medium text-foreground pr-4">
+                        {item.question}
+                      </h3>
+                      <HelpCircle
+                        className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform ${
+                          selectedFaq === index ? "rotate-180" : ""
+                        }`}
+                      />
                     </div>
                   </button>
                   {selectedFaq === index && (
                     <div className="px-4 pb-4">
                       <div className="pt-2 border-t border-border">
-                        <p className="text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item.answer}
+                        </p>
                       </div>
                     </div>
                   )}
@@ -276,12 +318,24 @@ export default function Support() {
             <div className="flex items-start space-x-3">
               <AlertCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
               <div>
-                <div className="font-medium text-orange-700">Срочная проблема?</div>
-                <div className="text-sm text-orange-600 mt-1">
-                  Если у вас критическая проблема с доступом, напишите нам в Telegram чат с пометкой "СРОЧНО" - мы ответим в течение 2 минут.
+                <div className="font-medium text-orange-700">
+                  Срочная проблема?
                 </div>
-                <Button size="sm" className="mt-3 bg-orange-500 hover:bg-orange-600 text-white" asChild>
-                  <a href="https://t.me/dkvpn_support" target="_blank" rel="noopener noreferrer">
+                <div className="text-sm text-orange-600 mt-1">
+                  Если у вас критическая проблема с доступом, напишите нам в
+                  Telegram чат с пометкой "СРОЧНО" - мы ответим в течение 2
+                  минут.
+                </div>
+                <Button
+                  size="sm"
+                  className="mt-3 bg-orange-500 hover:bg-orange-600 text-white"
+                  asChild
+                >
+                  <a
+                    href="https://t.me/dkvpn_support"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Send className="w-3 h-3 mr-1" />
                     Срочная связь
                   </a>
@@ -294,16 +348,20 @@ export default function Support() {
         {/* Links */}
         <Card className="border-border">
           <CardHeader>
-            <CardTitle className="text-lg text-foreground">📚 Полезные ссылки</CardTitle>
+            <CardTitle className="text-lg text-foreground">
+              📚 Полезные ссылки
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
             <Button variant="outline" className="w-full justify-start" asChild>
-              <Link to="/instructions">
-                📖 Подробные инструкции
-              </Link>
+              <Link to="/instructions">📖 Подробные инструкции</Link>
             </Button>
             <Button variant="outline" className="w-full justify-start" asChild>
-              <a href="https://dkurokhtin.github.io/vpn-docs" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://dkurokhtin.github.io/vpn-docs"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 🌐 Документация на сайте
                 <ExternalLink className="w-4 h-4 ml-auto" />
               </a>

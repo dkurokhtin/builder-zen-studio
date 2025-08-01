@@ -1,11 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { useVpnUser, useServiceStats, useSubscriptionActions, useClipboard } from "@/hooks/useVpn";
+import {
+  useVpnUser,
+  useServiceStats,
+  useSubscriptionActions,
+  useClipboard,
+} from "@/hooks/useVpn";
 import {
   Shield,
   Wifi,
@@ -21,14 +32,15 @@ import {
   CheckCircle,
   AlertCircle,
   Copy,
-  Loader2
+  Loader2,
 } from "lucide-react";
 
 export default function Index() {
   const [activeTab, setActiveTab] = useState("home");
   const { user, loading: userLoading, refreshUser } = useVpnUser();
   const { stats, loading: statsLoading } = useServiceStats();
-  const { activateFreeTrial, loading: actionLoading } = useSubscriptionActions();
+  const { activateFreeTrial, loading: actionLoading } =
+    useSubscriptionActions();
   const { copied, copyToClipboard } = useClipboard();
 
   const vpnFeatures = [
@@ -36,26 +48,26 @@ export default function Index() {
       icon: Shield,
       title: "Защита данных",
       description: "Без логов — ваша приватность под защитой",
-      color: "bg-green-500"
+      color: "bg-green-500",
     },
     {
       icon: Zap,
       title: "Высокая скорость",
       description: "До 1000 Мбит/с, безлимит��ый трафик",
-      color: "bg-telegram-blue"
+      color: "bg-telegram-blue",
     },
     {
       icon: Globe,
       title: "Доступ ко всем сайтам",
       description: "YouTube без рекламы, обход блокировок",
-      color: "bg-purple-500"
+      color: "bg-purple-500",
     },
     {
       icon: Lock,
       title: "Простая настройка",
       description: "Настройка за пару кликов на любом устройстве",
-      color: "bg-orange-500"
-    }
+      color: "bg-orange-500",
+    },
   ];
 
   const quickActions = [
@@ -64,29 +76,29 @@ export default function Index() {
       title: "Получить VPN",
       description: "Ссылка и QR-код",
       route: "/config",
-      color: "bg-telegram-blue"
+      color: "bg-telegram-blue",
     },
     {
       icon: Smartphone,
       title: "Инструкция",
       description: "Настройка устройств",
-      route: "/instructions", 
-      color: "bg-green-500"
+      route: "/instructions",
+      color: "bg-green-500",
     },
     {
       icon: Clock,
       title: "Подписка",
       description: "Управление и продление",
       route: "/subscription",
-      color: "bg-purple-500"
+      color: "bg-purple-500",
     },
     {
       icon: MessageCircle,
       title: "Поддержка",
       description: "Живая помощь 24/7",
       route: "/support",
-      color: "bg-orange-500"
-    }
+      color: "bg-orange-500",
+    },
   ];
 
   const handleActivateFreeTrial = async () => {
@@ -94,7 +106,7 @@ export default function Index() {
       await activateFreeTrial();
       refreshUser(); // Обновляем данные пользователя после активации
     } catch (error) {
-      console.error('Ошибка активации про��ного периода:', error);
+      console.error("Ошибка активации про��ного периода:", error);
     }
   };
 
@@ -136,10 +148,14 @@ export default function Index() {
             <div className="flex items-center space-x-2">
               <Badge
                 variant="secondary"
-                className={`${user?.subscriptionActive ? 'bg-green-500/10 text-green-600 border-green-500/20' : 'bg-red-500/10 text-red-600 border-red-500/20'}`}
+                className={`${user?.subscriptionActive ? "bg-green-500/10 text-green-600 border-green-500/20" : "bg-red-500/10 text-red-600 border-red-500/20"}`}
               >
-                {user?.subscriptionActive ? <CheckCircle className="w-3 h-3 mr-1" /> : <AlertCircle className="w-3 h-3 mr-1" />}
-                {user?.subscriptionActive ? 'Активна' : 'Истекла'}
+                {user?.subscriptionActive ? (
+                  <CheckCircle className="w-3 h-3 mr-1" />
+                ) : (
+                  <AlertCircle className="w-3 h-3 mr-1" />
+                )}
+                {user?.subscriptionActive ? "Активна" : "Истекла"}
               </Badge>
               <ThemeToggle />
             </div>
@@ -149,24 +165,25 @@ export default function Index() {
 
       {/* Main Content */}
       <div className="max-w-md mx-auto px-4 py-6 space-y-6">
-        
         {/* Welcome Card */}
         <Card className="bg-gradient-to-r from-telegram-blue to-green-500 text-white border-0 shadow-lg">
           <CardHeader className="pb-4">
             <div className="flex items-center space-x-3">
               <Avatar className="h-12 w-12 border-2 border-white/20">
                 <AvatarImage src="/placeholder.svg" />
-                <AvatarFallback className="bg-white/20 text-white">DK</AvatarFallback>
+                <AvatarFallback className="bg-white/20 text-white">
+                  DK
+                </AvatarFallback>
               </Avatar>
               <div>
                 <CardTitle className="text-white">
-                  👋 Добро пожаловать{user?.firstName ? `, ${user.firstName}` : ''}!
+                  👋 Добро пожаловать
+                  {user?.firstName ? `, ${user.firstName}` : ""}!
                 </CardTitle>
                 <CardDescription className="text-white/80">
                   {user?.subscriptionActive
                     ? `🟢 Ваша подписка активна ещё ${user.daysLeft} дней`
-                    : "🔴 Подписка истекла - продлите для продолжения"
-                  }
+                    : "🔴 Подписка истекла - продлите для продолжения"}
                 </CardDescription>
               </div>
             </div>
@@ -176,14 +193,20 @@ export default function Index() {
               {user?.subscriptionActive && user?.vpnLink && (
                 <div className="bg-white/10 rounded-lg p-3">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-white/80">🔗 VPN-ссылка:</span>
+                    <span className="text-sm text-white/80">
+                      🔗 VPN-ссылка:
+                    </span>
                     <Button
                       size="sm"
                       variant="ghost"
                       className="text-white hover:bg-white/20 h-6 px-2"
                       onClick={handleCopyVpnLink}
                     >
-                      {copied ? <CheckCircle className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
+                      {copied ? (
+                        <CheckCircle className="w-3 h-3" />
+                      ) : (
+                        <Copy className="w-3 h-3" />
+                      )}
                     </Button>
                   </div>
                   <div className="text-xs text-white/70 font-mono break-all bg-black/20 rounded p-2">
@@ -196,7 +219,9 @@ export default function Index() {
                   className="w-full bg-white text-telegram-blue hover:bg-white/90 font-medium"
                   size="lg"
                 >
-                  {user?.subscriptionActive ? "🔗 Получить VPN-ссылку" : "🚀 Получить доступ"}
+                  {user?.subscriptionActive
+                    ? "🔗 Получить VPN-ссылку"
+                    : "🚀 Получить доступ"}
                 </Button>
               </Link>
             </div>
@@ -212,8 +237,12 @@ export default function Index() {
                   <div className={`p-3 rounded-xl ${action.color}`}>
                     <action.icon className="w-5 h-5 text-white" />
                   </div>
-                  <div className="text-sm font-medium text-foreground">{action.title}</div>
-                  <div className="text-xs text-muted-foreground leading-tight">{action.description}</div>
+                  <div className="text-sm font-medium text-foreground">
+                    {action.title}
+                  </div>
+                  <div className="text-xs text-muted-foreground leading-tight">
+                    {action.description}
+                  </div>
                 </div>
               </Card>
             </Link>
@@ -222,7 +251,9 @@ export default function Index() {
 
         {/* VPN Features */}
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-foreground mb-4">🚀 Преимущества VPN</h2>
+          <h2 className="text-lg font-semibold text-foreground mb-4">
+            🚀 Преимущества VPN
+          </h2>
           {vpnFeatures.map((feature, index) => (
             <Card key={index} className="border-border">
               <CardContent className="p-4">
@@ -231,8 +262,12 @@ export default function Index() {
                     <feature.icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium text-foreground">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{feature.description}</p>
+                    <h3 className="font-medium text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -243,8 +278,12 @@ export default function Index() {
         {/* Platform Support */}
         <Card className="border-border">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg text-foreground">💻 Поддержка платформ</CardTitle>
-            <CardDescription className="text-muted-foreground">Работает на всех устройствах</CardDescription>
+            <CardTitle className="text-lg text-foreground">
+              💻 Поддержка платформ
+            </CardTitle>
+            <CardDescription className="text-muted-foreground">
+              Работает на всех устройствах
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4 text-center">
@@ -254,11 +293,16 @@ export default function Index() {
                 { icon: "💻", name: "Windows" },
                 { icon: "🍎", name: "macOS" },
                 { icon: "🐧", name: "Linux" },
-                { icon: "🌐", name: "Router" }
+                { icon: "🌐", name: "Router" },
               ].map((platform, index) => (
-                <div key={index} className="flex flex-col items-center space-y-1">
+                <div
+                  key={index}
+                  className="flex flex-col items-center space-y-1"
+                >
                   <div className="text-2xl">{platform.icon}</div>
-                  <div className="text-xs text-muted-foreground">{platform.name}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {platform.name}
+                  </div>
                 </div>
               ))}
             </div>
@@ -273,9 +317,11 @@ export default function Index() {
                 <Wifi className="w-4 h-4 text-telegram-blue" />
               </div>
               <div className="text-lg font-bold text-foreground">
-                {statsLoading ? '...' : stats?.totalUsers || '12,584'}
+                {statsLoading ? "..." : stats?.totalUsers || "12,584"}
               </div>
-              <div className="text-xs text-muted-foreground leading-tight">Активных пользователей</div>
+              <div className="text-xs text-muted-foreground leading-tight">
+                Активных пользователей
+              </div>
             </div>
           </Card>
           <Card className="text-center p-4 border-border">
@@ -284,18 +330,24 @@ export default function Index() {
                 <Shield className="w-4 h-4 text-green-500" />
               </div>
               <div className="text-lg font-bold text-foreground">4.9</div>
-              <div className="text-xs text-muted-foreground leading-tight">Рейтинг сервиса</div>
+              <div className="text-xs text-muted-foreground leading-tight">
+                Рейтинг сервиса
+              </div>
             </div>
           </Card>
         </div>
 
         {/* Free Trial Banner */}
-        {user?.planType !== 'free_trial' && !user?.subscriptionActive && (
+        {user?.planType !== "free_trial" && !user?.subscriptionActive && (
           <Card className="bg-gradient-to-r from-green-500/10 to-telegram-blue/10 border-green-500/20">
             <CardContent className="p-4 text-center">
               <div className="space-y-2">
-                <div className="text-green-600 font-semibold">🆓 7 дней бесплатно!</div>
-                <div className="text-sm text-gray-600">Для новых польз��вателей</div>
+                <div className="text-green-600 font-semibold">
+                  🆓 7 дней бесплатно!
+                </div>
+                <div className="text-sm text-gray-600">
+                  Для новых польз��вателей
+                </div>
                 <Button
                   size="sm"
                   className="bg-green-500 hover:bg-green-600 text-white"
@@ -308,7 +360,7 @@ export default function Index() {
                       Активируем...
                     </>
                   ) : (
-                    'Активировать пробный период'
+                    "Активировать пробный период"
                   )}
                 </Button>
               </div>
@@ -324,8 +376,18 @@ export default function Index() {
             {[
               { id: "home", label: "Главная", icon: Shield, route: "/" },
               { id: "config", label: "VPN", icon: QrCode, route: "/config" },
-              { id: "instructions", label: "Инструкции", icon: Smartphone, route: "/instructions" },
-              { id: "subscription", label: "Подписка", icon: Clock, route: "/subscription" }
+              {
+                id: "instructions",
+                label: "Инструкции",
+                icon: Smartphone,
+                route: "/instructions",
+              },
+              {
+                id: "subscription",
+                label: "Подписка",
+                icon: Clock,
+                route: "/subscription",
+              },
             ].map((tab) => (
               <Link
                 key={tab.id}
