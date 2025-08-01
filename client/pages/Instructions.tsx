@@ -208,7 +208,7 @@ export default function Instructions() {
                     <h4 className="font-medium text-foreground mb-2">Рекомендуемые приложения:</h4>
                     <div className="space-y-2">
                       {platform.apps.map((app, index) => (
-                        <div key={index} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                        <div key={index} className="flex items-center justify-between p-2 bg-muted/50 rounded-lg">
                           <div className="flex items-center space-x-2">
                             <span className="font-medium">{app.name}</span>
                             {app.recommended && (
@@ -267,7 +267,7 @@ export default function Instructions() {
                     <h4 className="font-medium text-foreground mb-2">Рекомендуемые приложения:</h4>
                     <div className="space-y-2">
                       {platform.apps.map((app, index) => (
-                        <div key={index} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+                        <div key={index} className="flex items-center justify-between p-2 bg-muted/50 rounded-lg">
                           <div className="flex items-center space-x-2">
                             <span className="font-medium">{app.name}</span>
                             {app.recommended && (
@@ -356,7 +356,7 @@ export default function Instructions() {
           </CardHeader>
           <CardContent className="space-y-3">
             {troubleshooting.map((item, index) => (
-              <div key={index} className="p-3 bg-gray-50 rounded-lg">
+              <div key={index} className="p-3 bg-muted/50 rounded-lg">
                 <div className="flex items-start space-x-3">
                   <span className="text-lg">{item.icon}</span>
                   <div>
