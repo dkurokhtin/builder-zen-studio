@@ -207,7 +207,7 @@ export default function Index() {
         <div className="grid grid-cols-2 gap-3">
           {quickActions.map((action, index) => (
             <Link key={index} to={action.route}>
-              <Card className="text-center p-4 border-gray-100 hover:shadow-md transition-all cursor-pointer h-full">
+              <Card className="text-center p-4 border-border hover:shadow-md transition-all cursor-pointer h-full">
                 <div className="flex flex-col items-center space-y-2">
                   <div className={`p-3 rounded-xl ${action.color}`}>
                     <action.icon className="w-5 h-5 text-white" />
