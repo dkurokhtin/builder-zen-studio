@@ -66,7 +66,7 @@ export default function Instructions() {
         "Скачайте v2rayN с GitHub (файл v2rayN-Core.zip)",
         "Распакуйте архив и запустите v2rayN.exe",
         "Кликните правой кнопкой на значок в трее",
-        "Выберите 'Добавить сервер' → 'Импорт ссылки из буфера обмена'",
+        "Выберите 'Добавить сервер' → 'Импорт ссылки из ��уфера обмена'",
         "Скопируйте VPN-ссылку и нажмите OK, затем 'Подключиться'"
       ]
     },
@@ -138,7 +138,7 @@ export default function Instructions() {
               </Link>
               <div>
                 <h1 className="font-semibold text-foreground">Инструкции</h1>
-                <p className="text-xs text-gray-500">Настройка VPN на устройствах</p>
+                <p className="text-xs text-muted-foreground">Настройка VPN на устройствах</p>
               </div>
             </div>
           </div>
@@ -317,7 +317,7 @@ export default function Instructions() {
               <CardHeader>
                 <CardTitle className="text-lg text-foreground">📡 Другие устройства</CardTitle>
                 <CardDescription>
-                  Дополнит��льные инструкции и ссылки
+                  Дополнительные инструкции и ссылки
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
