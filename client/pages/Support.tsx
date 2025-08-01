@@ -54,7 +54,7 @@ export default function Support() {
   const faqItems = [
     {
       question: "Как настроить VPN на Android?",
-      answer: "Скачайте приложение v2rayNG из Google Play Store, затем скопируйте вашу VPN-ссылку из бота и импортируйте её в приложение. Подробная инструкция доступна в разделе 'Инструкции'."
+      answer: "Скачайте приложение v2rayNG из Google Play Store, затем скопируйте вашу VPN-ссылку из бота и импортируйте её в приложен��е. Подробная инструкция доступна в разделе 'Инструкции'."
     },
     {
       question: "Почему низкая скорость подключения?",
@@ -212,7 +212,7 @@ export default function Support() {
                           Доступно
                         </Badge>
                       ) : (
-                        <Badge className="bg-gray-500/10 text-gray-600 border-gray-500/20 text-xs">
+                        <Badge className="bg-gray-500/10 text-muted-foreground border-gray-500/20 text-xs">
                           Скоро
                         </Badge>
                       )}
@@ -260,7 +260,7 @@ export default function Support() {
                   {selectedFaq === index && (
                     <div className="px-4 pb-4">
                       <div className="pt-2 border-t border-gray-100">
-                        <p className="text-sm text-gray-600 leading-relaxed">{item.answer}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
                       </div>
                     </div>
                   )}
@@ -312,7 +312,7 @@ export default function Support() {
               📋 Политика конфиденциальности
             </Button>
             <Button variant="outline" className="w-full justify-start">
-              📝 Условия использования
+              ���� Условия использования
             </Button>
           </CardContent>
         </Card>
