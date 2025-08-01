@@ -141,7 +141,7 @@ export default function Config() {
                 <div className="bg-white p-4 rounded-xl border inline-block">
                   {/* Здесь должен быть наст���������� QR код, се��час placeholder */}
                   <div className="w-48 h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
-                    <QrCode className="w-16 h-16 text-gray-400" />
+                    <QrCode className="w-16 h-16 text-muted-foreground" />
                   </div>
                 </div>
                 <div className="mt-4 space-y-2">
@@ -226,7 +226,7 @@ export default function Config() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-lg font-bold text-foreground">{vpnConfig.serverInfo.location}</div>
-                    <div className="text-xs text-muted-foreground">Локация</div>
+                    <div className="text-xs text-muted-foreground">��окация</div>
                   </div>
                   <div className="text-center">
                     <div className="text-lg font-bold text-foreground">{vpnConfig.serverInfo.load}</div>
