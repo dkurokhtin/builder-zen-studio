@@ -179,7 +179,7 @@ export default function TestTroubleshooting() {
                         </div>
                       </div>
                     </div>
-                    <HelpCircle className={`w-4 h-4 text-gray-400 transition-transform ${
+                    <HelpCircle className={`w-4 h-4 text-muted-foreground transition-transform ${
                       selectedFaq === index ? 'rotate-180' : ''
                     }`} />
                   </div>
