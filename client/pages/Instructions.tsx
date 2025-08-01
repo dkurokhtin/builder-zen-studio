@@ -66,7 +66,7 @@ export default function Instructions() {
         "Скачайте v2rayN с GitHub (файл v2rayN-Core.zip)",
         "Распакуйте архив и запустите v2rayN.exe",
         "Кликните правой кнопкой на значок в трее",
-        "Выберите 'Добавить сервер' → 'Импорт ссылки и�� буфера обмена'",
+        "Выберите 'Добавить сервер' → 'Импорт ссылки из буфера обмен��'",
         "Скопируйте VPN-ссылку и нажмите OK, затем 'Подключиться'"
       ]
     },
@@ -74,7 +74,7 @@ export default function Instructions() {
       id: "macos",
       name: "macOS", 
       icon: "🍎",
-      color: "bg-gray-700",
+      color: "bg-muted",
       apps: [
         { name: "FoXray", recommended: true, link: "https://apps.apple.com/app/foxray/id6448898396" },
         { name: "V2rayU", recommended: false, link: "https://github.com/yanue/V2rayU/releases" }
