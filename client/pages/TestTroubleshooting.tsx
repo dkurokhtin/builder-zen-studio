@@ -104,7 +104,7 @@ export default function TestTroubleshooting() {
         },
         {
           step: "Обратитесь в поддержку",
-          description: "Мы предоставим специальную конфигурацию для вашего регион��",
+          description: "Мы предоставим специальную конфигурацию для вашего региона",
           action: "contactSupport"
         }
       ]
@@ -156,7 +156,7 @@ export default function TestTroubleshooting() {
           </CardHeader>
           <CardContent className="space-y-4">
             {troubleshooting.map((issue, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+              <div key={index} className="border border-border rounded-lg overflow-hidden">
                 <button
                   className="w-full p-4 text-left hover:bg-gray-50 transition-colors"
                   onClick={() => setSelectedFaq(selectedFaq === index ? null : index)}
