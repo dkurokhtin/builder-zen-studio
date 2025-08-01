@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { useVpnUser, useServiceStats, useSubscriptionActions, useClipboard } from "@/hooks/useVpn";
 import {
   Shield,
@@ -51,7 +52,7 @@ export default function Index() {
     },
     {
       icon: Lock,
-      title: "Простая настройка",
+      title: "Простая н��стройка",
       description: "Настройка за пару кликов на любом устройстве",
       color: "bg-orange-500"
     }
