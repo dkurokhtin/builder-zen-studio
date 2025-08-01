@@ -127,7 +127,7 @@ export default function Config() {
             </Card>
 
             {/* QR Code Card */}
-            <Card className="border-gray-100">
+            <Card className="border-border">
               <CardHeader className="text-center">
                 <CardTitle className="text-lg text-foreground flex items-center justify-center">
                   <QrCode className="w-5 h-5 mr-2" />
@@ -139,7 +139,7 @@ export default function Config() {
               </CardHeader>
               <CardContent className="text-center">
                 <div className="bg-white p-4 rounded-xl border inline-block">
-                  {/* Здесь должен быть наст���������� QR код, се��час placeholder */}
+                  {/* Здесь должен быть наст���������� QR код, се����час placeholder */}
                   <div className="w-48 h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
                     <QrCode className="w-16 h-16 text-muted-foreground" />
                   </div>
@@ -158,7 +158,7 @@ export default function Config() {
             </Card>
 
             {/* VPN Link Card */}
-            <Card className="border-gray-100">
+            <Card className="border-border">
               <CardHeader>
                 <CardTitle className="text-lg text-foreground">🔗 VPN-ссылка</CardTitle>
                 <CardDescription>
@@ -218,7 +218,7 @@ export default function Config() {
             </Card>
 
             {/* Server Info */}
-            <Card className="border-gray-100">
+            <Card className="border-border">
               <CardHeader>
                 <CardTitle className="text-lg text-foreground">📍 Информация о сервере</CardTitle>
               </CardHeader>
@@ -226,7 +226,7 @@ export default function Config() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-lg font-bold text-foreground">{vpnConfig.serverInfo.location}</div>
-                    <div className="text-xs text-muted-foreground">��окация</div>
+                    <div className="text-xs text-muted-foreground">Локация</div>
                   </div>
                   <div className="text-center">
                     <div className="text-lg font-bold text-foreground">{vpnConfig.serverInfo.load}</div>
@@ -237,7 +237,7 @@ export default function Config() {
             </Card>
 
             {/* Instructions Quick Links */}
-            <Card className="border-gray-100">
+            <Card className="border-border">
               <CardHeader>
                 <CardTitle className="text-lg text-foreground">📖 Быстрые инструкции</CardTitle>
               </CardHeader>
@@ -286,7 +286,7 @@ export default function Config() {
         )}
 
         {/* Support Link */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardContent className="p-4 text-center">
             <div className="space-y-2">
               <div className="text-muted-foreground">Нужна помощь с настройкой?</div>
