@@ -71,7 +71,7 @@ export default function TestTroubleshooting() {
         },
         {
           step: "Измените протокол подключения",
-          description: "�� настройках приложения попробуйте другой протокол",
+          description: "В настройках приложения попробуйте другой протокол",
           action: null
         }
       ]
@@ -104,7 +104,7 @@ export default function TestTroubleshooting() {
         },
         {
           step: "Обратитесь в поддержку",
-          description: "Мы предоставим специальную конфигурацию для вашего региона",
+          description: "Мы предоставим специальную конфигурацию для вашего регион��",
           action: "contactSupport"
         }
       ]
@@ -114,7 +114,7 @@ export default function TestTroubleshooting() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -147,7 +147,7 @@ export default function TestTroubleshooting() {
         </Card>
 
         {/* Advanced Troubleshooting */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardHeader>
             <CardTitle className="text-lg text-foreground">🔧 Диагностика и решение проблем</CardTitle>
             <CardDescription>
@@ -186,7 +186,7 @@ export default function TestTroubleshooting() {
                 </button>
                 
                 {selectedFaq === index && (
-                  <div className="px-4 pb-4 border-t border-gray-100">
+                  <div className="px-4 pb-4 border-t border-border">
                     {/* Symptoms */}
                     <div className="mt-4">
                       <h4 className="font-medium text-foreground mb-2 flex items-center">
@@ -273,7 +273,7 @@ export default function TestTroubleshooting() {
         </Card>
 
         {/* Support Card */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardContent className="p-4 text-center">
             <div className="space-y-3">
               <div className="text-muted-foreground">Все еще нужна помощь?</div>
