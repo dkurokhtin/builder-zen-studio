@@ -66,7 +66,7 @@ export default function Support() {
     },
     {
       question: "VPN не подключается, что делать?",
-      answer: "1) Проверьте активность подписки 2) Убедитесь в правильности скопированной ссылки 3) Перезапустите приложение 4) Проверь��е интернет-соединение 5) Обратитесь в поддержку."
+      answer: "1) Проверьте активность подписки 2) Убедитесь в правильности скопированной ссылки 3) Перезапустите приложение 4) Проверьте интернет-соединение 5) Обратитесь в поддержку."
     },
     {
       question: "Можно ли использовать на нескольких устройствах?",
@@ -82,7 +82,7 @@ export default function Support() {
     },
     {
       question: "В каких странах есть серверы?",
-      answer: "У нас ес��ь серверы в 15+ странах: Нидерланды, Германия, США, Канада, Япония, Сингапур, Великобритания, Франция и другие. Мы регулярно добавляем новые локации."
+      answer: "У нас есть серверы в 15+ странах: Нидерланды, Германия, США, Канада, Япония, Сингапур, Великобритания, Франция и другие. Мы регулярно добавляем новые локации."
     }
   ];
 
@@ -181,7 +181,7 @@ export default function Support() {
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
                     <h3 className="font-medium text-foreground">{action.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{action.description}</p>
+                    <p className="text-sm text-muted-foreground mt-1">{action.description}</p>
                   </div>
                   <Link to={action.route}>
                     <Button size="sm" variant="outline">
@@ -217,7 +217,7 @@ export default function Support() {
                         </Badge>
                       )}
                     </div>
-                    <p className="text-sm text-gray-500 mt-1">{channel.description}</p>
+                    <p className="text-sm text-muted-foreground mt-1">{channel.description}</p>
                   </div>
                   <Button 
                     size="sm" 
@@ -278,7 +278,7 @@ export default function Support() {
               <div>
                 <div className="font-medium text-orange-700">Срочная проблема?</div>
                 <div className="text-sm text-orange-600 mt-1">
-                  Если у вас критическая проблема с доступом, напишите нам в Telegram чат с пометкой "СРОЧНО" - мы ответим �� течение 2 минут.
+                  Если у вас критическая проблема с доступом, напишите нам в Telegram чат с пометкой "СРОЧНО" - мы ответим в течение 2 минут.
                 </div>
                 <Button size="sm" className="mt-3 bg-orange-500 hover:bg-orange-600 text-white" asChild>
                   <a href="https://t.me/dkvpn_support" target="_blank" rel="noopener noreferrer">
