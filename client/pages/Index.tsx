@@ -41,7 +41,7 @@ export default function Index() {
     {
       icon: Zap,
       title: "Высокая скорость",
-      description: "До 1000 Мбит/с, безлимитный трафик",
+      description: "До 1000 Мбит/с, безлимит��ый трафик",
       color: "bg-telegram-blue"
     },
     {
@@ -82,7 +82,7 @@ export default function Index() {
     },
     {
       icon: MessageCircle,
-      title: "Подде��жка",
+      title: "Поддержка",
       description: "Живая помощь 24/7",
       route: "/support",
       color: "bg-orange-500"
@@ -196,7 +196,7 @@ export default function Index() {
                   className="w-full bg-white text-telegram-blue hover:bg-white/90 font-medium"
                   size="lg"
                 >
-                  {user?.subscriptionActive ? "🔗 Получить VPN-ссылку" : "🚀 Получить ��оступ"}
+                  {user?.subscriptionActive ? "🔗 Получить VPN-ссылку" : "🚀 Получить доступ"}
                 </Button>
               </Link>
             </div>
@@ -275,7 +275,7 @@ export default function Index() {
               <div className="text-lg font-bold text-foreground">
                 {statsLoading ? '...' : stats?.totalUsers || '12,584'}
               </div>
-              <div className="text-xs text-gray-500 leading-tight">Активных пользователей</div>
+              <div className="text-xs text-muted-foreground leading-tight">Активных пользователей</div>
             </div>
           </Card>
           <Card className="text-center p-4 border-gray-100">
