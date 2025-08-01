@@ -71,7 +71,7 @@ export default function TestTroubleshooting() {
         },
         {
           step: "Измените протокол подключения",
-          description: "В настройках приложения попробуйте другой протокол",
+          description: "�� настройках приложения попробуйте другой протокол",
           action: null
         }
       ]
@@ -125,7 +125,7 @@ export default function TestTroubleshooting() {
               </Link>
               <div>
                 <h1 className="font-semibold text-foreground">Решение проблем</h1>
-                <p className="text-xs text-gray-500">Диагностика VPN</p>
+                <p className="text-xs text-muted-foreground">Диагностика VPN</p>
               </div>
             </div>
           </div>
