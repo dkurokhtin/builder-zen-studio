@@ -92,7 +92,7 @@ export default function Index() {
   const handleActivateFreeTrial = async () => {
     try {
       await activateFreeTrial();
-      refreshUser(); // Обновляем данные пользов��теля после активации
+      refreshUser(); // Обновляем данные пользователя после активации
     } catch (error) {
       console.error('Ошибка активации пробного периода:', error);
     }
@@ -212,8 +212,8 @@ export default function Index() {
                   <div className={`p-3 rounded-xl ${action.color}`}>
                     <action.icon className="w-5 h-5 text-white" />
                   </div>
-                  <div className="text-sm font-medium text-gray-900">{action.title}</div>
-                  <div className="text-xs text-gray-500 leading-tight">{action.description}</div>
+                  <div className="text-sm font-medium text-foreground">{action.title}</div>
+                  <div className="text-xs text-muted-foreground leading-tight">{action.description}</div>
                 </div>
               </Card>
             </Link>
