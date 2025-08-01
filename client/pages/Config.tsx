@@ -106,7 +106,7 @@ export default function Config() {
               <CardHeader className="pb-4">
                 <CardTitle className="text-white flex items-center">
                   <CheckCircle className="w-5 h-5 mr-2" />
-                  Подписк�� активна
+                  Подписка активна
                 </CardTitle>
                 <CardDescription className="text-white/80">
                   Осталось {vpnConfig.daysLeft} дней
@@ -129,12 +129,12 @@ export default function Config() {
             {/* QR Code Card */}
             <Card className="border-gray-100">
               <CardHeader className="text-center">
-                <CardTitle className="text-lg text-gray-900 flex items-center justify-center">
+                <CardTitle className="text-lg text-foreground flex items-center justify-center">
                   <QrCode className="w-5 h-5 mr-2" />
                   QR-код для подключения
                 </CardTitle>
                 <CardDescription>
-                  Отсканируйт�� камерой в VPN приложении
+                  Отсканируйте камерой в VPN приложении
                 </CardDescription>
               </CardHeader>
               <CardContent className="text-center">
@@ -160,7 +160,7 @@ export default function Config() {
             {/* VPN Link Card */}
             <Card className="border-gray-100">
               <CardHeader>
-                <CardTitle className="text-lg text-gray-900">🔗 VPN-ссылка</CardTitle>
+                <CardTitle className="text-lg text-foreground">🔗 VPN-ссылка</CardTitle>
                 <CardDescription>
                   Скопируйте ссылку для ручной настройки
                 </CardDescription>
@@ -220,16 +220,16 @@ export default function Config() {
             {/* Server Info */}
             <Card className="border-gray-100">
               <CardHeader>
-                <CardTitle className="text-lg text-gray-900">📍 Информация о сервере</CardTitle>
+                <CardTitle className="text-lg text-foreground">📍 Информация о сервере</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-gray-900">{vpnConfig.serverInfo.location}</div>
+                    <div className="text-lg font-bold text-foreground">{vpnConfig.serverInfo.location}</div>
                     <div className="text-xs text-gray-500">Локация</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-bold text-gray-900">{vpnConfig.serverInfo.load}</div>
+                    <div className="text-lg font-bold text-foreground">{vpnConfig.serverInfo.load}</div>
                     <div className="text-xs text-gray-500">Загрузка</div>
                   </div>
                 </div>
@@ -239,7 +239,7 @@ export default function Config() {
             {/* Instructions Quick Links */}
             <Card className="border-gray-100">
               <CardHeader>
-                <CardTitle className="text-lg text-gray-900">📖 Быстрые инструкции</CardTitle>
+                <CardTitle className="text-lg text-foreground">📖 Быстрые инструкции</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
                 <Link to="/instructions">
