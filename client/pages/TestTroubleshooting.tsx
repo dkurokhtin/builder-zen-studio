@@ -158,7 +158,7 @@ export default function TestTroubleshooting() {
             {troubleshooting.map((issue, index) => (
               <div key={index} className="border border-border rounded-lg overflow-hidden">
                 <button
-                  className="w-full p-4 text-left hover:bg-gray-50 transition-colors"
+                  className="w-full p-4 text-left hover:bg-muted/50 transition-colors"
                   onClick={() => setSelectedFaq(selectedFaq === index ? null : index)}
                 >
                   <div className="flex items-center justify-between">
@@ -211,7 +211,7 @@ export default function TestTroubleshooting() {
                       </h4>
                       <div className="space-y-3">
                         {issue.solutions.map((solution, sIndex) => (
-                          <div key={sIndex} className="bg-gray-50 p-3 rounded-lg">
+                          <div key={sIndex} className="bg-muted/50 p-3 rounded-lg">
                             <div className="flex items-start space-x-3">
                               <div className="w-6 h-6 bg-telegram-blue rounded-full flex items-center justify-center text-white text-xs font-medium flex-shrink-0">
                                 {sIndex + 1}
