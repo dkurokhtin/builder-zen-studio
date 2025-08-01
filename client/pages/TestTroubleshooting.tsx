@@ -71,7 +71,7 @@ export default function TestTroubleshooting() {
         },
         {
           step: "Измените протокол подключения",
-          description: "В настрой��ах приложения попробуйте другой протокол",
+          description: "В настройках приложения попробуйте другой протокол",
           action: null
         }
       ]
@@ -195,7 +195,7 @@ export default function TestTroubleshooting() {
                       </h4>
                       <ul className="space-y-1">
                         {issue.symptoms.map((symptom, sIndex) => (
-                          <li key={sIndex} className="text-sm text-gray-600 flex items-start">
+                          <li key={sIndex} className="text-sm text-muted-foreground flex items-start">
                             <span className="text-red-400 mr-2">•</span>
                             {symptom}
                           </li>
@@ -218,7 +218,7 @@ export default function TestTroubleshooting() {
                               </div>
                               <div className="flex-1">
                                 <div className="font-medium text-foreground">{solution.step}</div>
-                                <div className="text-sm text-gray-600 mt-1">{solution.description}</div>
+                                <div className="text-sm text-muted-foreground mt-1">{solution.description}</div>
                                 {solution.action && (
                                   <div className="mt-2">
                                     {solution.action === 'checkSubscription' && (
@@ -276,7 +276,7 @@ export default function TestTroubleshooting() {
         <Card className="border-gray-100">
           <CardContent className="p-4 text-center">
             <div className="space-y-3">
-              <div className="text-gray-600">Все еще нужна помощь?</div>
+              <div className="text-muted-foreground">Все еще нужна помощь?</div>
               <Link to="/support">
                 <Button className="w-full bg-telegram-blue hover:bg-telegram-blue-dark">
                   💬 Связаться с поддержкой
