@@ -64,7 +64,7 @@ export default function Subscription() {
 
   const features = [
     "🚀 Скорость до 1000 Мбит/с",
-    "🌍 Серверы �� 15+ странах",
+    "🌍 Серверы в 15+ странах",
     "📱 Поддержка всех устройств",
     "🔒 Без логов и анонимность",
     "⚡ Безлимитный трафик",
@@ -85,7 +85,7 @@ export default function Subscription() {
               </Link>
               <div>
                 <h1 className="font-semibold text-foreground">Подписка</h1>
-                <p className="text-xs text-gray-500">Управление и продление</p>
+                <p className="text-xs text-muted-foreground">Управление и продление</p>
               </div>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function Subscription() {
                       <div className="flex items-center space-x-2 mt-1">
                         <span className="text-lg font-bold text-foreground">{plan.price}</span>
                         {plan.originalPrice && (
-                          <span className="text-sm text-gray-500 line-through">{plan.originalPrice}</span>
+                          <span className="text-sm text-muted-foreground line-through">{plan.originalPrice}</span>
                         )}
                       </div>
                       <div className="text-sm text-gray-600">за {plan.period}</div>
@@ -258,7 +258,7 @@ export default function Subscription() {
               <CardDescription>
                 {subscriptionData.autoRenewal 
                   ? 'Подписка будет продлена автоматически'
-                  : 'Автопродление отключено'
+                  : 'Автопродление отклю��ено'
                 }
               </CardDescription>
             </CardHeader>
