@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export default function Subscription() {
-  // Мо�� данные подписки (в реальности получаем с API)
+  // Мок данные п��дписки (в реальности получаем с API)
   const subscriptionData = {
     isActive: true,
     plan: "Premium",
@@ -66,7 +66,7 @@ export default function Subscription() {
     "🚀 Скорость до 1000 Мбит/с",
     "🌍 Серверы в 15+ странах",
     "📱 Поддержка всех устройств",
-    "🔒 Без логов и ��нонимность",
+    "🔒 Без логов и анонимнос��ь",
     "⚡ Безлимитный трафик",
     "🛡️ 24/7 поддержка"
   ];
@@ -74,7 +74,7 @@ export default function Subscription() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -145,7 +145,7 @@ export default function Subscription() {
                   <Gift className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
-                  <div className="font-semibold text-green-600">🆓 Бесп��атный пробный период</div>
+                  <div className="font-semibold text-green-600">🆓 Бесплатный пробный период</div>
                   <div className="text-sm text-muted-foreground">7 дней полного доступа для новых пользователей</div>
                 </div>
               </div>
@@ -207,7 +207,7 @@ export default function Subscription() {
         </div>
 
         {/* Features */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardHeader>
             <CardTitle className="text-lg text-foreground">⭐ Что включено</CardTitle>
           </CardHeader>
@@ -224,7 +224,7 @@ export default function Subscription() {
         </Card>
 
         {/* Payment Methods */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardHeader>
             <CardTitle className="text-lg text-foreground">💳 Способы оплаты</CardTitle>
             <CardDescription>Выберите удобный способ оплаты</CardDescription>
@@ -249,7 +249,7 @@ export default function Subscription() {
 
         {/* Auto Renewal */}
         {subscriptionData.isActive && (
-          <Card className="border-gray-100">
+          <Card className="border-border">
             <CardHeader>
               <CardTitle className="text-lg text-foreground flex items-center">
                 <RefreshCw className="w-5 h-5 mr-2" />
@@ -274,7 +274,7 @@ export default function Subscription() {
         )}
 
         {/* Help */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardContent className="p-4 text-center">
             <div className="space-y-3">
               <div className="text-muted-foreground">Нужна помощь с оплатой?</div>
