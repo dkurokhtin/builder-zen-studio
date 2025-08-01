@@ -66,7 +66,7 @@ export default function Instructions() {
         "Скачайте v2rayN с GitHub (файл v2rayN-Core.zip)",
         "Распакуйте архив и запустите v2rayN.exe",
         "Кликните правой кнопкой на значок в трее",
-        "Выберите 'Добавить сервер' → 'Импорт ссылки из ��уфера обмена'",
+        "Выберите 'Добавить сервер' → 'Импорт ссылки из буфера обмена'",
         "Скопируйте VPN-ссылку и нажмите OK, затем 'Подключиться'"
       ]
     },
@@ -127,7 +127,7 @@ export default function Instructions() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -192,7 +192,7 @@ export default function Instructions() {
 
           <TabsContent value="android" className="space-y-4">
             {platforms.filter(p => ["android", "ios"].includes(p.id)).map((platform) => (
-              <Card key={platform.id} className="border-gray-100">
+              <Card key={platform.id} className="border-border">
                 <CardHeader>
                   <CardTitle className="text-lg text-foreground flex items-center">
                     <span className="text-2xl mr-3">{platform.icon}</span>
@@ -254,7 +254,7 @@ export default function Instructions() {
 
           <TabsContent value="windows" className="space-y-4">
             {platforms.filter(p => ["windows", "macos", "linux"].includes(p.id)).map((platform) => (
-              <Card key={platform.id} className="border-gray-100">
+              <Card key={platform.id} className="border-border">
                 <CardHeader>
                   <CardTitle className="text-lg text-foreground flex items-center">
                     <span className="text-2xl mr-3">{platform.icon}</span>
@@ -313,7 +313,7 @@ export default function Instructions() {
 
           <TabsContent value="other" className="space-y-4">
             {/* Additional Platforms */}
-            <Card className="border-gray-100">
+            <Card className="border-border">
               <CardHeader>
                 <CardTitle className="text-lg text-foreground">📡 Другие устройства</CardTitle>
                 <CardDescription>
@@ -347,7 +347,7 @@ export default function Instructions() {
         </Tabs>
 
         {/* Troubleshooting */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardHeader>
             <CardTitle className="text-lg text-foreground">🔧 Реш��ние проблем</CardTitle>
             <CardDescription>
@@ -370,7 +370,7 @@ export default function Instructions() {
         </Card>
 
         {/* Support Card */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardContent className="p-4 text-center">
             <div className="space-y-3">
               <div className="text-muted-foreground">Все еще нужна помощь?</div>
