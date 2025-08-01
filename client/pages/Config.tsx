@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { 
   ArrowLeft,
   Copy, 
@@ -135,7 +136,7 @@ export default function Config() {
               </CardHeader>
               <CardContent className="text-center">
                 <div className="bg-white p-4 rounded-xl border inline-block">
-                  {/* Здесь должен быть настоящий QR код, сейчас placeholder */}
+                  {/* Здесь должен быть наст���������� QR код, се��час placeholder */}
                   <div className="w-48 h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
                     <QrCode className="w-16 h-16 text-gray-400" />
                   </div>
