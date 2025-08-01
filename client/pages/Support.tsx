@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { 
   ArrowLeft,
   MessageCircle,
@@ -57,7 +58,7 @@ export default function Support() {
     },
     {
       question: "Почему низкая скорость подключения?",
-      answer: "Проверьте ваше интернет-соединение без VPN. Попробуйте переподключиться или перезапустить приложение. Если проблема с��храняется, свяжитесь с поддержкой."
+      answer: "Проверьте ваше интернет-соединение без VPN. Попробуйте переподключиться или перезапустить приложение. Если проблема сохраняется, свяжит��сь с поддержкой."
     },
     {
       question: "Как продлить подписку?",
@@ -72,8 +73,8 @@ export default function Support() {
       answer: "Да, одну подписку можно использовать на неограниченном количестве устройств. Просто используйте одну и ту же VPN-ссылку на всех ваших устройствах."
     },
     {
-      question: "Как получить возврат ��редств?",
-      answer: "Мы предоставляем возврат в течение 7 дней с момента покупки при технических проблемах. Обратитесь в поддержку с описанием проблемы."
+      question: "Как получить возврат средств?",
+      answer: "Мы предоставляем возврат в течение 7 дней с момента покупки при технических проблемах. Обратитесь в поддержку с описанием ��роблемы."
     },
     {
       question: "Сохраняются ли логи активности?",
@@ -93,7 +94,7 @@ export default function Support() {
       route: "/instructions"
     },
     {
-      title: "Вопросы по оплате",
+      title: "Вопросы п�� оплате",
       description: "Проблемы с продлением или возвратом",
       action: "Написать в поддержку",
       route: "#contact"
