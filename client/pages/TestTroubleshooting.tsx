@@ -71,7 +71,7 @@ export default function TestTroubleshooting() {
         },
         {
           step: "Измените протокол подключения",
-          description: "В настройках приложения попробуйте другой протокол",
+          description: "В настрой��ах приложения попробуйте другой протокол",
           action: null
         }
       ]
@@ -124,7 +124,7 @@ export default function TestTroubleshooting() {
                 </Button>
               </Link>
               <div>
-                <h1 className="font-semibold text-gray-900">Решение проблем</h1>
+                <h1 className="font-semibold text-foreground">Решение проблем</h1>
                 <p className="text-xs text-gray-500">Диагностика VPN</p>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function TestTroubleshooting() {
         {/* Advanced Troubleshooting */}
         <Card className="border-gray-100">
           <CardHeader>
-            <CardTitle className="text-lg text-gray-900">🔧 Диагностика и решение проблем</CardTitle>
+            <CardTitle className="text-lg text-foreground">🔧 Диагностика и решение проблем</CardTitle>
             <CardDescription>
               Пошаговые инструкции для решения типичных проблем
             </CardDescription>
@@ -165,7 +165,7 @@ export default function TestTroubleshooting() {
                     <div className="flex items-center space-x-3">
                       <span className="text-xl">{issue.icon}</span>
                       <div>
-                        <h3 className="font-medium text-gray-900">{issue.problem}</h3>
+                        <h3 className="font-medium text-foreground">{issue.problem}</h3>
                         <div className="flex items-center space-x-2 mt-1">
                           <Badge 
                             className={`text-xs ${
@@ -189,7 +189,7 @@ export default function TestTroubleshooting() {
                   <div className="px-4 pb-4 border-t border-gray-100">
                     {/* Symptoms */}
                     <div className="mt-4">
-                      <h4 className="font-medium text-gray-900 mb-2 flex items-center">
+                      <h4 className="font-medium text-foreground mb-2 flex items-center">
                         <AlertTriangle className="w-4 h-4 mr-2 text-red-500" />
                         Симптомы:
                       </h4>
@@ -205,7 +205,7 @@ export default function TestTroubleshooting() {
 
                     {/* Solutions */}
                     <div className="mt-4">
-                      <h4 className="font-medium text-gray-900 mb-3 flex items-center">
+                      <h4 className="font-medium text-foreground mb-3 flex items-center">
                         <Zap className="w-4 h-4 mr-2 text-green-500" />
                         Пошаговое решение:
                       </h4>
@@ -217,7 +217,7 @@ export default function TestTroubleshooting() {
                                 {sIndex + 1}
                               </div>
                               <div className="flex-1">
-                                <div className="font-medium text-gray-900">{solution.step}</div>
+                                <div className="font-medium text-foreground">{solution.step}</div>
                                 <div className="text-sm text-gray-600 mt-1">{solution.description}</div>
                                 {solution.action && (
                                   <div className="mt-2">
