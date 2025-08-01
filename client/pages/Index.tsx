@@ -52,7 +52,7 @@ export default function Index() {
     },
     {
       icon: Lock,
-      title: "Простая н��стройка",
+      title: "Простая настройка",
       description: "Настройка за пару кликов на любом устройстве",
       color: "bg-orange-500"
     }
@@ -94,7 +94,7 @@ export default function Index() {
       await activateFreeTrial();
       refreshUser(); // Обновляем данные пользователя после активации
     } catch (error) {
-      console.error('Ошибка активации пробного периода:', error);
+      console.error('Ошибка активации пробного период��:', error);
     }
   };
 
@@ -121,7 +121,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+      <div className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -129,17 +129,20 @@ export default function Index() {
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="font-semibold text-gray-900">dkbestvpn</h1>
-                <p className="text-xs text-gray-500">@dkvpn1_bot</p>
+                <h1 className="font-semibold text-foreground">dkbestvpn</h1>
+                <p className="text-xs text-muted-foreground">@dkvpn1_bot</p>
               </div>
             </div>
-            <Badge
-              variant="secondary"
-              className={`${user?.subscriptionActive ? 'bg-green-500/10 text-green-600 border-green-500/20' : 'bg-red-500/10 text-red-600 border-red-500/20'}`}
-            >
-              {user?.subscriptionActive ? <CheckCircle className="w-3 h-3 mr-1" /> : <AlertCircle className="w-3 h-3 mr-1" />}
-              {user?.subscriptionActive ? 'Активна' : 'Истекла'}
-            </Badge>
+            <div className="flex items-center space-x-2">
+              <Badge
+                variant="secondary"
+                className={`${user?.subscriptionActive ? 'bg-green-500/10 text-green-600 border-green-500/20' : 'bg-red-500/10 text-red-600 border-red-500/20'}`}
+              >
+                {user?.subscriptionActive ? <CheckCircle className="w-3 h-3 mr-1" /> : <AlertCircle className="w-3 h-3 mr-1" />}
+                {user?.subscriptionActive ? 'Активна' : 'Истекла'}
+              </Badge>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
