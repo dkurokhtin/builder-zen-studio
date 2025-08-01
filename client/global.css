@@ -67,17 +67,18 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Telegram-styled dark theme */
+    --background: 218 20% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 220 20% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 220 20% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 213 92% 56%;
+    --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -88,30 +89,31 @@
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62.8% 50.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
+    --ring: 213 92% 56%;
+
+    --sidebar-background: 218 20% 8%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 213 92% 56%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 213 92% 56%;
 
     /* Telegram color scheme for dark mode */
-    --telegram-blue: 213 92% 60%;
-    --telegram-blue-light: 213 92% 70%;
-    --telegram-blue-dark: 213 92% 50%;
-    --telegram-gray: 215 28% 90%;
-    --telegram-gray-light: 215 28% 95%;
-    --telegram-gray-dark: 215 28% 80%;
+    --telegram-blue: 213 92% 56%;
+    --telegram-blue-light: 213 92% 66%;
+    --telegram-blue-dark: 213 92% 46%;
+    --telegram-gray: 215 28% 85%;
+    --telegram-gray-light: 215 28% 90%;
+    --telegram-gray-dark: 215 28% 75%;
     --telegram-green: 120 100% 45%;
-    --telegram-red: 0 100% 65%;
+    --telegram-red: 0 100% 60%;
   }
 }
 
