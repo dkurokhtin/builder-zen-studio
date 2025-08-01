@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export default function Subscription() {
-  // Мок данные подписки (в реальности получаем с API)
+  // Мо�� данные подписки (в реальности получаем с API)
   const subscriptionData = {
     isActive: true,
     plan: "Premium",
@@ -66,7 +66,7 @@ export default function Subscription() {
     "🚀 Скорость до 1000 Мбит/с",
     "🌍 Серверы в 15+ странах",
     "📱 Поддержка всех устройств",
-    "🔒 Без логов и анонимность",
+    "🔒 Без логов и ��нонимность",
     "⚡ Безлимитный трафик",
     "🛡️ 24/7 поддержка"
   ];
@@ -106,7 +106,7 @@ export default function Subscription() {
                   {subscriptionData.isActive ? <CheckCircle className="w-5 h-5 mr-2" /> : <AlertCircle className="w-5 h-5 mr-2" />}
                   {subscriptionData.isActive ? 'Подписка активна' : 'Подписка истекла'}
                 </CardTitle>
-                <CardDescription className={subscriptionData.isActive ? 'text-white/80' : 'text-gray-600'}>
+                <CardDescription className={subscriptionData.isActive ? 'text-white/80' : 'text-muted-foreground'}>
                   {subscriptionData.isActive 
                     ? `Осталось ${subscriptionData.daysLeft} дней из ${subscriptionData.totalDays}`
                     : 'Продлите для продолжения использования'
@@ -145,8 +145,8 @@ export default function Subscription() {
                   <Gift className="w-5 h-5 text-white" />
                 </div>
                 <div className="flex-1">
-                  <div className="font-semibold text-green-600">🆓 Бесплатный пробный период</div>
-                  <div className="text-sm text-gray-600">7 дней полного доступа для новых пользователей</div>
+                  <div className="font-semibold text-green-600">🆓 Бесп��атный пробный период</div>
+                  <div className="text-sm text-muted-foreground">7 дней полного доступа для новых пользователей</div>
                 </div>
               </div>
               <Button className="w-full mt-3 bg-green-500 hover:bg-green-600 text-white">
@@ -190,7 +190,7 @@ export default function Subscription() {
                           <span className="text-sm text-muted-foreground line-through">{plan.originalPrice}</span>
                         )}
                       </div>
-                      <div className="text-sm text-gray-600">за {plan.period}</div>
+                      <div className="text-sm text-muted-foreground">за {plan.period}</div>
                     </div>
                     <Button 
                       size="sm"
@@ -258,7 +258,7 @@ export default function Subscription() {
               <CardDescription>
                 {subscriptionData.autoRenewal 
                   ? 'Подписка будет продлена автоматически'
-                  : 'Автопродление отклю��ено'
+                  : 'Автопродление отключено'
                 }
               </CardDescription>
             </CardHeader>
@@ -277,7 +277,7 @@ export default function Subscription() {
         <Card className="border-gray-100">
           <CardContent className="p-4 text-center">
             <div className="space-y-3">
-              <div className="text-gray-600">Нужна помощь с оплатой?</div>
+              <div className="text-muted-foreground">Нужна помощь с оплатой?</div>
               <Link to="/support">
                 <Button variant="outline" size="sm">
                   💬 Связаться с поддержкой
