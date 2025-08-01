@@ -67,9 +67,9 @@ export default function Config() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
+    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-background to-green-500/5 dark:from-telegram-blue/10 dark:via-background dark:to-green-500/10">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+      <div className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -79,17 +79,20 @@ export default function Config() {
                 </Button>
               </Link>
               <div>
-                <h1 className="font-semibold text-gray-900">VPN Конфигурация</h1>
-                <p className="text-xs text-gray-500">dkbestvpn</p>
+                <h1 className="font-semibold text-foreground">VPN Конфигурация</h1>
+                <p className="text-xs text-muted-foreground">dkbestvpn</p>
               </div>
             </div>
-            <Badge 
-              variant="secondary" 
-              className={`${vpnConfig.isActive ? 'bg-green-500/10 text-green-600 border-green-500/20' : 'bg-red-500/10 text-red-600 border-red-500/20'}`}
-            >
-              {vpnConfig.isActive ? <CheckCircle className="w-3 h-3 mr-1" /> : <AlertCircle className="w-3 h-3 mr-1" />}
-              {vpnConfig.isActive ? 'Активна' : 'Истекла'}
-            </Badge>
+            <div className="flex items-center space-x-2">
+              <Badge
+                variant="secondary"
+                className={`${vpnConfig.isActive ? 'bg-green-500/10 text-green-600 border-green-500/20' : 'bg-red-500/10 text-red-600 border-red-500/20'}`}
+              >
+                {vpnConfig.isActive ? <CheckCircle className="w-3 h-3 mr-1" /> : <AlertCircle className="w-3 h-3 mr-1" />}
+                {vpnConfig.isActive ? 'Активна' : 'Истекла'}
+              </Badge>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
@@ -103,7 +106,7 @@ export default function Config() {
               <CardHeader className="pb-4">
                 <CardTitle className="text-white flex items-center">
                   <CheckCircle className="w-5 h-5 mr-2" />
-                  Подписка активна
+                  Подписк�� активна
                 </CardTitle>
                 <CardDescription className="text-white/80">
                   Осталось {vpnConfig.daysLeft} дней
@@ -131,7 +134,7 @@ export default function Config() {
                   QR-код для подключения
                 </CardTitle>
                 <CardDescription>
-                  Отсканируйте камерой в VPN приложении
+                  Отсканируйт�� камерой в VPN приложении
                 </CardDescription>
               </CardHeader>
               <CardContent className="text-center">
