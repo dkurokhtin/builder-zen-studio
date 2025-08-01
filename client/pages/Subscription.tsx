@@ -89,6 +89,7 @@ export default function Subscription() {
                 <p className="text-xs text-muted-foreground">Управление и продление</p>
               </div>
             </div>
+            <ThemeToggle />
           </div>
         </div>
       </div>
@@ -210,7 +211,7 @@ export default function Subscription() {
         {/* Features */}
         <Card className="border-border">
           <CardHeader>
-            <CardTitle className="text-lg text-foreground">⭐ Чт�� включено</CardTitle>
+            <CardTitle className="text-lg text-foreground">⭐ Что включено</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
