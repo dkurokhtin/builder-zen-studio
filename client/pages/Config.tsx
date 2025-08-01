@@ -168,7 +168,7 @@ export default function Config() {
               <CardContent className="space-y-4">
                 <div className="bg-gray-50 rounded-lg p-3">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-600">Ссылка конфигурации:</span>
+                    <span className="text-sm text-muted-foreground">Ссылка конфигурации:</span>
                     <Button 
                       size="sm" 
                       variant="ghost" 
@@ -289,7 +289,7 @@ export default function Config() {
         <Card className="border-gray-100">
           <CardContent className="p-4 text-center">
             <div className="space-y-2">
-              <div className="text-gray-600">Нужна помощь с настройкой?</div>
+              <div className="text-muted-foreground">Нужна помощь с настройкой?</div>
               <Link to="/support">
                 <Button variant="outline" size="sm">
                   💬 Связаться с поддержкой
