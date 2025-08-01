@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export default function Subscription() {
-  // Мок данные п��дписки (в реальности получаем с API)
+  // Мок данные подписки (в реальности получаем с API)
   const subscriptionData = {
     isActive: true,
     plan: "Premium",
@@ -66,13 +66,13 @@ export default function Subscription() {
     "🚀 Скорость до 1000 Мбит/с",
     "🌍 Серверы в 15+ странах",
     "📱 Поддержка всех устройств",
-    "🔒 Без логов и анонимнос��ь",
+    "🔒 Без логов и анонимность",
     "⚡ Безлимитный трафик",
     "🛡️ 24/7 поддержка"
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
+    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-background to-green-500/5">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
