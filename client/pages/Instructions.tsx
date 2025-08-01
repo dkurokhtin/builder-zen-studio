@@ -317,7 +317,7 @@ export default function Instructions() {
               <CardHeader>
                 <CardTitle className="text-lg text-foreground">📡 Другие устройства</CardTitle>
                 <CardDescription>
-                  Дополнитель��ые инструкции и ссылки
+                  Дополнит��льные инструкции и ссылки
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -361,7 +361,7 @@ export default function Instructions() {
                   <span className="text-lg">{item.icon}</span>
                   <div>
                     <div className="font-medium text-foreground">{item.problem}</div>
-                    <div className="text-sm text-gray-600 mt-1">{item.solution}</div>
+                    <div className="text-sm text-muted-foreground mt-1">{item.solution}</div>
                   </div>
                 </div>
               </div>
@@ -373,7 +373,7 @@ export default function Instructions() {
         <Card className="border-gray-100">
           <CardContent className="p-4 text-center">
             <div className="space-y-3">
-              <div className="text-gray-600">Все еще нужна помощь?</div>
+              <div className="text-muted-foreground">Все еще нужна помощь?</div>
               <Link to="/support">
                 <Button className="w-full bg-telegram-blue hover:bg-telegram-blue-dark">
                   💬 Связаться с поддержкой
