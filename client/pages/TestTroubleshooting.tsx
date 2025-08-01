@@ -33,7 +33,7 @@ export default function TestTroubleshooting() {
         },
         {
           step: "Обновите VPN-ссылку",
-          description: "Получите новую конфигурацию в разделе 'VPN'",
+          description: "Получите но��ую конфигурацию в разделе 'VPN'",
           action: "refreshConfig"
         },
         {
@@ -112,7 +112,7 @@ export default function TestTroubleshooting() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-background to-green-500/5">
+    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-background to-green-500/5 dark:from-telegram-blue/10 dark:via-background dark:to-green-500/10">
       {/* Header */}
       <div className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
