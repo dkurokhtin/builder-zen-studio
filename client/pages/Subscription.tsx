@@ -53,7 +53,7 @@ export default function Subscription() {
       popular: false
     },
     {
-      name: "12 месяцев",
+      name: "12 месяц��в",
       price: "2799 ₽",
       originalPrice: "3588 ₽",
       period: "год",
@@ -72,7 +72,7 @@ export default function Subscription() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-background to-green-500/5">
+    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-background to-green-500/5 dark:from-telegram-blue/10 dark:via-background dark:to-green-500/10">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
