@@ -119,7 +119,7 @@ export default function Index() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
+    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-background to-green-500/5 dark:from-telegram-blue/10 dark:via-background dark:to-green-500/10">
       {/* Header */}
       <div className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
@@ -244,7 +244,7 @@ export default function Index() {
         <Card className="border-gray-100">
           <CardHeader className="pb-3">
             <CardTitle className="text-lg text-gray-900">💻 Поддержка платформ</CardTitle>
-            <CardDescription>Работает на всех у��тройствах</CardDescription>
+            <CardDescription>Работает на всех устройствах</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4 text-center">
