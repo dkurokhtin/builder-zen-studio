@@ -38,7 +38,7 @@ export default function TestTroubleshooting() {
         },
         {
           step: "Проверьте интернет-соединение",
-          description: "Убедитесь, что интернет работает без VPN",
+          description: "Убедитесь, что интерн��т работает без VPN",
           action: null
         },
         {
@@ -71,7 +71,7 @@ export default function TestTroubleshooting() {
         },
         {
           step: "Измените протокол подключения",
-          description: "В настройках приложения попробуйте другой протокол",
+          description: "В наст��ойках приложения попробуйте другой протокол",
           action: null
         }
       ]
@@ -114,7 +114,7 @@ export default function TestTroubleshooting() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+      <div className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
