@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { 
   ArrowLeft,
   Calendar,
@@ -53,7 +54,7 @@ export default function Subscription() {
       popular: false
     },
     {
-      name: "12 месяц��в",
+      name: "12 месяцев",
       price: "2799 ₽",
       originalPrice: "3588 ₽",
       period: "год",
@@ -209,7 +210,7 @@ export default function Subscription() {
         {/* Features */}
         <Card className="border-border">
           <CardHeader>
-            <CardTitle className="text-lg text-foreground">⭐ Что включено</CardTitle>
+            <CardTitle className="text-lg text-foreground">⭐ Чт�� включено</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
