@@ -82,7 +82,7 @@ export default function Index() {
     },
     {
       icon: MessageCircle,
-      title: "Поддержка",
+      title: "Подде��жка",
       description: "Живая помощь 24/7",
       route: "/support",
       color: "bg-orange-500"
@@ -196,7 +196,7 @@ export default function Index() {
                   className="w-full bg-white text-telegram-blue hover:bg-white/90 font-medium"
                   size="lg"
                 >
-                  {user?.subscriptionActive ? "🔗 Получить VPN-ссылку" : "🚀 Получить доступ"}
+                  {user?.subscriptionActive ? "🔗 Получить VPN-ссылку" : "🚀 Получить ��оступ"}
                 </Button>
               </Link>
             </div>
@@ -283,8 +283,8 @@ export default function Index() {
               <div className="p-2 bg-green-500/10 rounded-full">
                 <Shield className="w-4 h-4 text-green-500" />
               </div>
-              <div className="text-lg font-bold text-gray-900">4.9</div>
-              <div className="text-xs text-gray-500 leading-tight">Рейтинг сервиса</div>
+              <div className="text-lg font-bold text-foreground">4.9</div>
+              <div className="text-xs text-muted-foreground leading-tight">Рейтинг сервиса</div>
             </div>
           </Card>
         </div>
@@ -308,7 +308,7 @@ export default function Index() {
                       Активируем...
                     </>
                   ) : (
-                    '��ктивировать пробный период'
+                    'Активировать пробный период'
                   )}
                 </Button>
               </div>
