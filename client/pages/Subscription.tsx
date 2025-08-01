@@ -64,7 +64,7 @@ export default function Subscription() {
 
   const features = [
     "🚀 Скорость до 1000 Мбит/с",
-    "🌍 Серверы в 15+ странах",
+    "🌍 Серверы �� 15+ странах",
     "📱 Поддержка всех устройств",
     "🔒 Без логов и анонимность",
     "⚡ Безлимитный трафик",
@@ -84,7 +84,7 @@ export default function Subscription() {
                 </Button>
               </Link>
               <div>
-                <h1 className="font-semibold text-gray-900">Подписка</h1>
+                <h1 className="font-semibold text-foreground">Подписка</h1>
                 <p className="text-xs text-gray-500">Управление и продление</p>
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function Subscription() {
 
         {/* Subscription Plans */}
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold text-gray-900">💳 Тарифные планы</h2>
+          <h2 className="text-lg font-semibold text-foreground">💳 Тарифные планы</h2>
           
           <div className="space-y-3">
             {plans.map((plan, index) => (
@@ -174,7 +174,7 @@ export default function Subscription() {
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                       <div className="flex items-center space-x-2">
-                        <span className="font-semibold text-gray-900">{plan.name}</span>
+                        <span className="font-semibold text-foreground">{plan.name}</span>
                         {plan.popular && (
                           <Badge className="bg-telegram-blue text-white">Популярный</Badge>
                         )}
@@ -185,7 +185,7 @@ export default function Subscription() {
                         )}
                       </div>
                       <div className="flex items-center space-x-2 mt-1">
-                        <span className="text-lg font-bold text-gray-900">{plan.price}</span>
+                        <span className="text-lg font-bold text-foreground">{plan.price}</span>
                         {plan.originalPrice && (
                           <span className="text-sm text-gray-500 line-through">{plan.originalPrice}</span>
                         )}
@@ -209,7 +209,7 @@ export default function Subscription() {
         {/* Features */}
         <Card className="border-gray-100">
           <CardHeader>
-            <CardTitle className="text-lg text-gray-900">⭐ Что включено</CardTitle>
+            <CardTitle className="text-lg text-foreground">⭐ Что включено</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
@@ -226,13 +226,13 @@ export default function Subscription() {
         {/* Payment Methods */}
         <Card className="border-gray-100">
           <CardHeader>
-            <CardTitle className="text-lg text-gray-900">💳 Способы оплаты</CardTitle>
+            <CardTitle className="text-lg text-foreground">💳 Способы оплаты</CardTitle>
             <CardDescription>Выберите удобный способ оплаты</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             <Button variant="outline" className="w-full justify-start">
               <CreditCard className="w-4 h-4 mr-3" />
-              Банковская карт��
+              Банковская карта
             </Button>
             <Button variant="outline" className="w-full justify-start">
               <Zap className="w-4 h-4 mr-3" />
@@ -251,7 +251,7 @@ export default function Subscription() {
         {subscriptionData.isActive && (
           <Card className="border-gray-100">
             <CardHeader>
-              <CardTitle className="text-lg text-gray-900 flex items-center">
+              <CardTitle className="text-lg text-foreground flex items-center">
                 <RefreshCw className="w-5 h-5 mr-2" />
                 Автопродление
               </CardTitle>
