@@ -54,7 +54,7 @@ export default function Support() {
   const faqItems = [
     {
       question: "Как настроить VPN на Android?",
-      answer: "Скачайте приложение v2rayNG из Google Play Store, затем скопируйте вашу VPN-ссылку из бота и импортируйте её в приложен��е. Подробная инструкция доступна в разделе 'Инструкции'."
+      answer: "Скачайте приложение v2rayNG из Google Play Store, затем скопируйте вашу VPN-ссылку из бота и импортируйте её в приложение. Подроб��ая инструкция доступна в разделе 'Инструкции'."
     },
     {
       question: "Почему низкая скорость подключения?",
@@ -82,7 +82,7 @@ export default function Support() {
     },
     {
       question: "В каких странах есть серверы?",
-      answer: "У нас есть серверы в 15+ странах: Нидерланды, Германия, США, Канада, Япония, Сингапур, Великобритания, Франция и другие. Мы регулярно добавляем новые локации."
+      answer: "У нас есть серверы в 15+ странах: Нидерланды, Германия, США, Канада, Япония, Сингапур, Великобр��тания, Франция и другие. Мы регулярно добавляем новые локации."
     }
   ];
 
@@ -176,7 +176,7 @@ export default function Support() {
         <div className="space-y-3">
           <h2 className="text-lg font-semibold text-foreground">🚀 Быстрые действия</h2>
           {quickActions.map((action, index) => (
-            <Card key={index} className="border-gray-100 hover:shadow-md transition-shadow cursor-pointer">
+            <Card key={index} className="border-border hover:shadow-md transition-shadow cursor-pointer">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
@@ -198,7 +198,7 @@ export default function Support() {
         <div className="space-y-3" id="contact">
           <h2 className="text-lg font-semibold text-foreground">💬 Способы связи</h2>
           {supportChannels.map((channel, index) => (
-            <Card key={index} className="border-gray-100">
+            <Card key={index} className="border-border">
               <CardContent className="p-4">
                 <div className="flex items-center space-x-4">
                   <div className={`p-3 rounded-xl ${channel.color}`}>
@@ -244,7 +244,7 @@ export default function Support() {
           <h2 className="text-lg font-semibold text-foreground">❓ Частые вопросы</h2>
           <div className="space-y-2">
             {faqItems.map((item, index) => (
-              <Card key={index} className="border-gray-100">
+              <Card key={index} className="border-border">
                 <CardContent className="p-0">
                   <button
                     className="w-full p-4 text-left hover:bg-gray-50 transition-colors"
@@ -259,7 +259,7 @@ export default function Support() {
                   </button>
                   {selectedFaq === index && (
                     <div className="px-4 pb-4">
-                      <div className="pt-2 border-t border-gray-100">
+                      <div className="pt-2 border-t border-border">
                         <p className="text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
                       </div>
                     </div>
@@ -292,7 +292,7 @@ export default function Support() {
         </Card>
 
         {/* Links */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardHeader>
             <CardTitle className="text-lg text-foreground">📚 Полезные ссылки</CardTitle>
           </CardHeader>
@@ -312,7 +312,7 @@ export default function Support() {
               📋 Политика конфиденциальности
             </Button>
             <Button variant="outline" className="w-full justify-start">
-              ���� Условия использования
+              📝 Условия испо��ьзования
             </Button>
           </CardContent>
         </Card>
