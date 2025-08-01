@@ -236,7 +236,7 @@ export default function Instructions() {
                           <div className="w-6 h-6 bg-telegram-blue rounded-full flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
                             {index + 1}
                           </div>
-                          <div className="text-sm text-gray-700 pt-1">{step}</div>
+                          <div className="text-sm text-foreground pt-1">{step}</div>
                         </div>
                       ))}
                     </div>
@@ -295,7 +295,7 @@ export default function Instructions() {
                           <div className="w-6 h-6 bg-telegram-blue rounded-full flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
                             {index + 1}
                           </div>
-                          <div className="text-sm text-gray-700 pt-1">{step}</div>
+                          <div className="text-sm text-foreground pt-1">{step}</div>
                         </div>
                       ))}
                     </div>
@@ -317,7 +317,7 @@ export default function Instructions() {
               <CardHeader>
                 <CardTitle className="text-lg text-foreground">📡 Другие устройства</CardTitle>
                 <CardDescription>
-                  Дополнительные инструкции и ссылки
+                  Дополнитель��ые инструкции и ссылки
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
