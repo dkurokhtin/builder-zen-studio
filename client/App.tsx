@@ -14,6 +14,7 @@ import Instructions from "./pages/Instructions";
 import Subscription from "./pages/Subscription";
 import Support from "./pages/Support";
 import TestTroubleshooting from "./pages/TestTroubleshooting";
+import DarkThemeDemo from "./pages/DarkThemeDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
