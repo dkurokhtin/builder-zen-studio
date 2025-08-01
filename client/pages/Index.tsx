@@ -94,7 +94,7 @@ export default function Index() {
       await activateFreeTrial();
       refreshUser(); // Обновляем данные пользователя после активации
     } catch (error) {
-      console.error('Ошибка активации пробного периода:', error);
+      console.error('Ошибка активации про��ного периода:', error);
     }
   };
 
@@ -267,7 +267,7 @@ export default function Index() {
 
         {/* Stats */}
         <div className="grid grid-cols-2 gap-3">
-          <Card className="text-center p-4 border-gray-100">
+          <Card className="text-center p-4 border-border">
             <div className="flex flex-col items-center space-y-2">
               <div className="p-2 bg-telegram-blue/10 rounded-full">
                 <Wifi className="w-4 h-4 text-telegram-blue" />
@@ -278,7 +278,7 @@ export default function Index() {
               <div className="text-xs text-muted-foreground leading-tight">Активных пользователей</div>
             </div>
           </Card>
-          <Card className="text-center p-4 border-gray-100">
+          <Card className="text-center p-4 border-border">
             <div className="flex flex-col items-center space-y-2">
               <div className="p-2 bg-green-500/10 rounded-full">
                 <Shield className="w-4 h-4 text-green-500" />
