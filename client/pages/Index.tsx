@@ -94,7 +94,7 @@ export default function Index() {
       await activateFreeTrial();
       refreshUser(); // Обновляем данные пользователя после активации
     } catch (error) {
-      console.error('Ошибка активации пробного период��:', error);
+      console.error('Ошибка активации пробного периода:', error);
     }
   };
 
@@ -107,11 +107,11 @@ export default function Index() {
   // Если данные загружаются
   if (userLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
+      <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-background to-green-500/5 dark:from-telegram-blue/10 dark:via-background dark:to-green-500/10">
         <div className="flex items-center justify-center h-screen">
           <div className="text-center">
             <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-telegram-blue" />
-            <p className="text-gray-600">Загрузка данных...</p>
+            <p className="text-muted-foreground">Загрузка данных...</p>
           </div>
         </div>
       </div>
@@ -244,7 +244,7 @@ export default function Index() {
         <Card className="border-gray-100">
           <CardHeader className="pb-3">
             <CardTitle className="text-lg text-gray-900">💻 Поддержка платформ</CardTitle>
-            <CardDescription>Работает на всех устройствах</CardDescription>
+            <CardDescription>Работает на всех у��тройствах</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4 text-center">
