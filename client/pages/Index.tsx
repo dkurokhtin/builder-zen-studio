@@ -92,7 +92,7 @@ export default function Index() {
   const handleActivateFreeTrial = async () => {
     try {
       await activateFreeTrial();
-      refreshUser(); // Обновляем данные пользователя после активации
+      refreshUser(); // Обновляем данные пользов��теля после активации
     } catch (error) {
       console.error('Ошибка активации пробного периода:', error);
     }
@@ -318,7 +318,7 @@ export default function Index() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
+      <div className="fixed bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm border-t border-border">
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-around py-2">
             {[
@@ -331,9 +331,9 @@ export default function Index() {
                 key={tab.id}
                 to={tab.route}
                 className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
-                  activeTab === tab.id 
-                    ? "text-telegram-blue bg-telegram-blue/10" 
-                    : "text-gray-500 hover:text-gray-700"
+                  activeTab === tab.id
+                    ? "text-telegram-blue bg-telegram-blue/10"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 <tab.icon className="w-5 h-5 mb-1" />
