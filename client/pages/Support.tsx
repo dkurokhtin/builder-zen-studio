@@ -58,7 +58,7 @@ export default function Support() {
     },
     {
       question: "Почему низкая скорость подключения?",
-      answer: "Проверьте ваше интернет-соединение без VPN. Попробуйте переподключиться или перезапустить приложение. Если проблема сохраняется, свяжит��сь с поддержкой."
+      answer: "Проверьте ваше интернет-соединение без VPN. Попробуйте переподключиться или перезапустить приложение. Если проблема сохраняется, свяжитесь с поддержкой."
     },
     {
       question: "Как продлить подписку?",
@@ -94,7 +94,7 @@ export default function Support() {
       route: "/instructions"
     },
     {
-      title: "Вопросы п�� оплате",
+      title: "Вопросы по оплате",
       description: "Проблемы с продлением или возвратом",
       action: "Написать в поддержку",
       route: "#contact"
@@ -108,9 +108,9 @@ export default function Support() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-white to-green-500/5">
+    <div className="min-h-screen bg-gradient-to-br from-telegram-blue/5 via-background to-green-500/5 dark:from-telegram-blue/10 dark:via-background dark:to-green-500/10">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+      <div className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="max-w-md mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -120,14 +120,17 @@ export default function Support() {
                 </Button>
               </Link>
               <div>
-                <h1 className="font-semibold text-gray-900">Поддержка</h1>
-                <p className="text-xs text-gray-500">Помощь 24/7</p>
+                <h1 className="font-semibold text-foreground">Поддержка</h1>
+                <p className="text-xs text-muted-foreground">Помощь 24/7</p>
               </div>
             </div>
-            <Badge className="bg-green-500/10 text-green-600 border-green-500/20">
-              <Clock className="w-3 h-3 mr-1" />
-              Онлайн
-            </Badge>
+            <div className="flex items-center space-x-2">
+              <Badge className="bg-green-500/10 text-green-600 border-green-500/20">
+                <Clock className="w-3 h-3 mr-1" />
+                Онлайн
+              </Badge>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
