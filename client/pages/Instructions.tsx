@@ -142,6 +142,7 @@ export default function Instructions() {
                 <p className="text-xs text-muted-foreground">Настройка VPN на устройствах</p>
               </div>
             </div>
+            <ThemeToggle />
           </div>
         </div>
       </div>
