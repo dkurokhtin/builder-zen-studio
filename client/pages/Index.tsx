@@ -222,17 +222,17 @@ export default function Index() {
 
         {/* VPN Features */}
         <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">🚀 Преимущества VPN</h2>
+          <h2 className="text-lg font-semibold text-foreground mb-4">🚀 Преимущества VPN</h2>
           {vpnFeatures.map((feature, index) => (
-            <Card key={index} className="border-gray-100">
+            <Card key={index} className="border-border">
               <CardContent className="p-4">
                 <div className="flex items-center space-x-4">
                   <div className={`p-3 rounded-xl ${feature.color}`}>
                     <feature.icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium text-gray-900">{feature.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{feature.description}</p>
+                    <h3 className="font-medium text-foreground">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground mt-1">{feature.description}</p>
                   </div>
                 </div>
               </CardContent>
