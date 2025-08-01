@@ -226,11 +226,11 @@ export default function Config() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-lg font-bold text-foreground">{vpnConfig.serverInfo.location}</div>
-                    <div className="text-xs text-gray-500">Локация</div>
+                    <div className="text-xs text-muted-foreground">Локация</div>
                   </div>
                   <div className="text-center">
                     <div className="text-lg font-bold text-foreground">{vpnConfig.serverInfo.load}</div>
-                    <div className="text-xs text-gray-500">Загрузка</div>
+                    <div className="text-xs text-muted-foreground">Загрузка</div>
                   </div>
                 </div>
               </CardContent>
