@@ -241,10 +241,10 @@ export default function Index() {
         </div>
 
         {/* Platform Support */}
-        <Card className="border-gray-100">
+        <Card className="border-border">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg text-gray-900">💻 Поддержка платформ</CardTitle>
-            <CardDescription>Работает на всех устройствах</CardDescription>
+            <CardTitle className="text-lg text-foreground">💻 Поддержка платформ</CardTitle>
+            <CardDescription className="text-muted-foreground">Работает на всех устройствах</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-4 text-center">
@@ -258,7 +258,7 @@ export default function Index() {
               ].map((platform, index) => (
                 <div key={index} className="flex flex-col items-center space-y-1">
                   <div className="text-2xl">{platform.icon}</div>
-                  <div className="text-xs text-gray-600">{platform.name}</div>
+                  <div className="text-xs text-muted-foreground">{platform.name}</div>
                 </div>
               ))}
             </div>
